@@ -1,13 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+.brand-title {
+  font-size: 2.2rem;
+  margin: .5rem;
+  font-family: 'Libre Barcode 39 Text', cursive;
+}
+.navbar-links ul{
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-links li {
+  list-style: none;
+}
+.navbar-links li a {
+  text-decoration: none;
+  color: #1b1b1b;
+  padding: 1rem;
+  display: block;
+
+}
+
+.cartBtn {
+  margin-right: 1em;
+}
+.navbar-links li:hover{
+  text-decoration: underline;
+}
+
+.btnHolder{
+  position: absolute;
+  top: .1rem;
+  right: 1rem;
+  display: none;
+}
+
+
+@media (max-width: 768px){
+  .btnHolder{
+    display: flex;
+  }
+
+  .navbar-links{
+    display: none;
+    width: 100%;
+  }
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-links li {
+    text-align: center;
+  }
+  .navbar-links li a {
+    padding: .5rem 1rem;
+  }
+  .navbar-links.active{
+    display: flex;
+  }
+  .cartBtn {
+    display: none;
+  }
 }
