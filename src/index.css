@@ -10,17 +10,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #252525;
 }
 .brand-title {
   font-size: 2.2rem;
-  margin: .5rem;
+  margin: .8rem;
   font-family: 'Libre Barcode 39 Text', cursive;
+}
+.brand-title a {
+  text-decoration: none;
+  color: #1b1b1b
 }
 .navbar-links ul{
   margin: 0;
   padding: 0;
-  
   display: flex;
 }
 
@@ -37,20 +40,71 @@ body {
 
 .cartBtn {
   margin-right: 1em;
+  width: 170px;
+  display: flex;
+  justify-content: flex-end;
 }
 .navbar-links li:hover{
-  text-decoration: underline;
+
+  opacity: .7;
+}
+.gridProduct{
+  grid-template-columns: repeat(4,1fr);
+  
 }
 
 .btnHolder{
   position: absolute;
-  top: .1rem;
+  top: .3rem;
   right: 1rem;
   display: none;
 }
 
 
+.container{
+  animation: expand 350ms ease-in-out;
+}
+.imgContainer{
+  position: relative;
+}
+.imgContainer:hover .overlay {
+  opacity: 1;
+}
+.overlay{
+  position: absolute;
+  bottom: 3px;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.5); /* Black see-through */
+  color: #333;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  opacity:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@keyframes expand {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+   transform: scale(1);
+  }
+}
+@media (max-width: 1200px){
+  .gridProduct{
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
 @media (max-width: 768px){
+  .gridProduct{
+    grid-template-columns: repeat(2,1fr);
+  }
   .btnHolder{
     display: flex;
   }
@@ -75,6 +129,7 @@ body {
   }
   .navbar-links.active{
     display: flex;
+
   }
   .cartBtn {
     display: none;
