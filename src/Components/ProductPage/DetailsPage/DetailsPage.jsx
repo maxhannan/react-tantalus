@@ -22,7 +22,7 @@ const DetailsPage = ({product, handleClick}) => {
           <Typography variant = 'h4' gutterBottom>
             {product.text}
           </Typography>
-          <Typography variant = 'h4' color = 'primary' gutterBottom>
+          <Typography variant = 'h5' color = 'primary' gutterBottom>
             ${product.price}
           </Typography>
           <Select
@@ -51,9 +51,7 @@ const infoContainer = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
-  alignItems: 'center',
   width: '100%',
-
 
 }
 const imgContainer ={
@@ -67,6 +65,6 @@ const imgContainer ={
 }
 
 const imgStyle = {
-  maxWidth: '95%',
-  maxHeight: '95%'
+  maxWidth: '100%',
+  maxHeight: '100%'
 }
