@@ -4,8 +4,17 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import { Button, IconButton, Typography } from '@material-ui/core'
 import './styles.css'
+import { useState } from 'react';
 
-const DetailsPage = ({product, handleClick}) => {
+const DetailsPage = ({product, handleClick, handleAddToCart}) => {
+  const [quantity, setQuantity] = useState(1);
+  
+  const handleSubmit = (e,product) => {
+    e.preventDefault()
+    const productEntry = {product: product, qty: quantity}
+    setQuantity(1)
+    handleAddToCart(productEntry)
+  }
   return ( 
     <div  className = 'detailsContainer'>
       <div className="closeBtnHolder">
@@ -22,7 +31,7 @@ const DetailsPage = ({product, handleClick}) => {
           <img src={product.pic} className = 'imgStyle' alt = 'hero' />
         </div>
         <div className = 'detailsInfoContainer' style = { infoContainer }>
-          <form className = 'formContainer'>
+          <form className = 'formContainer' onSubmit = {(e) => handleSubmit(e, product)}>
             <Typography variant = 'h4' gutterBottom>
               {product.text}
             </Typography>
@@ -30,7 +39,8 @@ const DetailsPage = ({product, handleClick}) => {
               ${product.price}
             </Typography>
             <Select
-              value = {1}
+              value = {quantity}
+              onChange = {(e) =>  setQuantity(e.target.value)}
               variant = 'outlined'
               style = {{width: '40%', marginBottom: '5%'}}
             >
@@ -63,9 +73,6 @@ const imgContainer ={
   alignItems: 'flex-start',
   justifyContent: 'center',
   width: '100%',
-
-
-
 }
 
 

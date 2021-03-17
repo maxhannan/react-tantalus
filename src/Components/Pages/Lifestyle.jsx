@@ -1,8 +1,8 @@
 import ProductPage from "../ProductPage/ProductPage";
 
-const Lifestyle = () => {
+const Lifestyle = ({handleAddToCart}) => {
   return ( 
-    <ProductPage heading = 'Lifestyle' section = 'lifestyle'/>
+    <ProductPage heading = 'Lifestyle' section = 'lifestyle' handleAddToCart = {handleAddToCart}/>
    );
 }
  

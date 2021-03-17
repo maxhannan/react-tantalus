@@ -33,12 +33,12 @@ const Navbar = () => {
           <li><Link to="/react-tantalus/sale" onClick = {closeMenu}><Typography variant = 'subtitle1' color="secondary">Sale</Typography></Link></li>
         </ul>
       </div>
-      <div className={menuOpen ? 'cartBtn' : 'cartBtn'}>
-      <IconButton component = {Link} to = '/react-tantalus/cart'>
-        <Badge badgeContent={2} color="secondary">
-          <MdShoppingCart color = '#252525'/>
-        </Badge>
-      </IconButton>
+      <div className='cartBtn'>
+        <IconButton component = {Link} to = '/react-tantalus/cart'>
+          <Badge badgeContent={2} color="secondary">
+            <MdShoppingCart color = '#252525'/>
+          </Badge>
+        </IconButton>
       </div>
     </nav>
    );

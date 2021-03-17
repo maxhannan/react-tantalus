@@ -1,8 +1,8 @@
 import ProductPage from "../ProductPage/ProductPage";
 
-const Mens = () => {
+const Mens = ({handleAddToCart}) => {
   return ( 
-    <ProductPage heading = "Men's Clothing" section = 'men'/>
+    <ProductPage heading = "Men's Clothing" section = 'men' handleAddToCart = {handleAddToCart}/>
    );
 }
  

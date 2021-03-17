@@ -5,7 +5,7 @@ import './styles.css'
 import ProductPreview from './Product/Product'
 import DetailsPage from './DetailsPage/DetailsPage'
 
-const ProductPage = ({heading, section = 'mens'}) => {
+const ProductPage = ({heading, section = 'mens', handleAddToCart}) => {
 
   const [activeProduct, setActiveProduct ] = useState({});
   const [openDetails, setOpenDetails] = useState(false);
@@ -19,7 +19,7 @@ const ProductPage = ({heading, section = 'mens'}) => {
 
   return (
     <>
-    {openDetails && <DetailsPage product = {activeProduct} handleClick = {() => setOpenDetails(false)}/>}
+    {openDetails && <DetailsPage product = {activeProduct} handleAddToCart = {handleAddToCart} handleClick = {() => setOpenDetails(false)}/>}
     {!openDetails && 
       <Container maxWidth = 'lg' style = {containerStyle}>
         <Typography variant = 'h3' gutterBottom>

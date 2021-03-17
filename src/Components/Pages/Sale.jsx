@@ -1,7 +1,7 @@
 import ProductPage from "../ProductPage/ProductPage";
-const Sale = () => {
+const Sale = ({handleAddToCart}) => {
   return ( 
-    <ProductPage heading = 'Sale' section = 'sale'/>
+    <ProductPage heading = 'Sale' section = 'sale' handleAddToCart = {handleAddToCart}/>
    );
 }
  
