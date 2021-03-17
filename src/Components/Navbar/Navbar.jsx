@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Typography } from '@material-ui/core';
 import Badge from '@material-ui/core/Badge';
 import { Link } from 'react-router-dom'
-
+import './styles.css'
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => {
-    setMenuOpen(!menuOpen)
+    setMenuOpen(false)
   }
   return ( 
     <nav className = 'navbar'>
@@ -20,7 +20,7 @@ const Navbar = () => {
             <MdShoppingCart color = '#252525'/>
           </Badge>
         </IconButton>
-        <IconButton onClick = {closeMenu}>
+        <IconButton onClick = {() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <MdClose color = '#252525'/> : <MdMenu color = '#252525'/>}
         </IconButton>
       </div>

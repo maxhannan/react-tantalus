@@ -1,9 +1,6 @@
 import { Button, Typography } from '@material-ui/core'
-import imgone from '../Assets/1.jpg'
-import imgTwo from '../Assets/2.jpg'
-import imgThree from '../Assets/3.jpg'
-import imgFour from '../Assets/4.jpg'
-import {MdAddCircleOutline} from 'react-icons/md'
+import { MdAddCircleOutline } from 'react-icons/md'
+import './styles.css'
 const ProductPreview = ({product, handleClick}) => {
   return ( 
     <div className="container">
@@ -11,10 +8,11 @@ const ProductPreview = ({product, handleClick}) => {
         className="imgContainer"
         onMouseOver={e => (e.currentTarget.firstChild.src = product.altPic)}
         onMouseOut={e => (e.currentTarget.firstChild.src = product.pic)}
+        onClick = {handleClick} 
         >
           <img src={product.pic} alt="" style = {imgStyle}/>
           <div className="overlay" id = {product.id}>
-            <Button onClick = {handleClick} variant = 'contained' endIcon={<MdAddCircleOutline />}>Shop</Button>
+            <Button variant = 'contained' endIcon={<MdAddCircleOutline />}>Shop</Button>
           </div>
         </div>
         <div className="textContainer">
@@ -22,7 +20,7 @@ const ProductPreview = ({product, handleClick}) => {
             {product.text}
             
           </Typography>
-          <Typography variant = 'body2'>
+          <Typography variant = 'subtitle1' color = 'primary'>
             ${product.price}
           </Typography>
         </div>

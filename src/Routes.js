@@ -1,11 +1,11 @@
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import Home from './Components/Home';
-import Landing from './Components/Landing';
-import Lifestyle from './Components/Lifestyle';
-import Mens from './Components/Mens';
-import Navbar from './Components/Navbar';
-import Sale from './Components/Sale';
-import Womens from './Components/Womens';
+import Home from './Components/Pages/Home';
+import Landing from './Components/Pages/Landing';
+import Lifestyle from './Components/Pages/Lifestyle';
+import Mens from './Components/Pages/Mens';
+import Navbar from './Components/Navbar/Navbar';
+import Sale from './Components/Pages/Sale';
+import Womens from './Components/Pages/Womens';
 
 const Routes = () => {
   return ( 

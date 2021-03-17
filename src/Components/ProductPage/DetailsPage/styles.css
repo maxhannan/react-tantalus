@@ -1,0 +1,49 @@
+.detailsContainer {
+  width: 100vw; 
+  height: 90vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0em 2em;
+  animation: appear 1s ease    ;
+}
+
+.closeBtnHolder {
+  height: 15vh; 
+  position: absolute;
+  top: 10vh;
+  right: 5vh;
+}
+
+.detailsPage {
+  display: flex;
+  margin-top: 6vh;
+  height: 80vh;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacit: 1;
+  }
+}
+@media (max-width: 768px){
+
+  .detailsPage{
+    flex-direction: column;
+  }
+  .formContainer{
+    width: 100%;
+  }
+}
