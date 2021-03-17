@@ -1,24 +1,36 @@
 {
   "files": {
-    "main.css": "/react-tantalus/static/css/main.1455350f.chunk.css",
-    "main.js": "/react-tantalus/static/js/main.b6f61784.chunk.js",
-    "main.js.map": "/react-tantalus/static/js/main.b6f61784.chunk.js.map",
+    "main.css": "/react-tantalus/static/css/main.e13263b4.chunk.css",
+    "main.js": "/react-tantalus/static/js/main.f4d7597e.chunk.js",
+    "main.js.map": "/react-tantalus/static/js/main.f4d7597e.chunk.js.map",
     "runtime-main.js": "/react-tantalus/static/js/runtime-main.e1773ff7.js",
     "runtime-main.js.map": "/react-tantalus/static/js/runtime-main.e1773ff7.js.map",
-    "static/js/2.adc75cd9.chunk.js": "/react-tantalus/static/js/2.adc75cd9.chunk.js",
-    "static/js/2.adc75cd9.chunk.js.map": "/react-tantalus/static/js/2.adc75cd9.chunk.js.map",
+    "static/js/2.04cae899.chunk.js": "/react-tantalus/static/js/2.04cae899.chunk.js",
+    "static/js/2.04cae899.chunk.js.map": "/react-tantalus/static/js/2.04cae899.chunk.js.map",
     "index.html": "/react-tantalus/index.html",
-    "static/css/main.1455350f.chunk.css.map": "/react-tantalus/static/css/main.1455350f.chunk.css.map",
-    "static/js/2.adc75cd9.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.adc75cd9.chunk.js.LICENSE.txt",
-    "static/media/1.e53ca87d.jpg": "/react-tantalus/static/media/1.e53ca87d.jpg",
-    "static/media/2.9dd16f89.jpg": "/react-tantalus/static/media/2.9dd16f89.jpg",
-    "static/media/3.3d96acb3.jpg": "/react-tantalus/static/media/3.3d96acb3.jpg",
-    "static/media/4.28c6d635.jpg": "/react-tantalus/static/media/4.28c6d635.jpg"
+    "static/css/main.e13263b4.chunk.css.map": "/react-tantalus/static/css/main.e13263b4.chunk.css.map",
+    "static/js/2.04cae899.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.04cae899.chunk.js.LICENSE.txt",
+    "static/media/mens1.a890970d.jpg": "/react-tantalus/static/media/mens1.a890970d.jpg",
+    "static/media/mens1alt.50f4446e.jpg": "/react-tantalus/static/media/mens1alt.50f4446e.jpg",
+    "static/media/mens2.1c07175d.jpg": "/react-tantalus/static/media/mens2.1c07175d.jpg",
+    "static/media/mens2alt.0c16c14f.jpg": "/react-tantalus/static/media/mens2alt.0c16c14f.jpg",
+    "static/media/mens3.fdc05e85.jpg": "/react-tantalus/static/media/mens3.fdc05e85.jpg",
+    "static/media/mens3alt.a9de63f2.jpg": "/react-tantalus/static/media/mens3alt.a9de63f2.jpg",
+    "static/media/mens4.602248ed.jpg": "/react-tantalus/static/media/mens4.602248ed.jpg",
+    "static/media/mens4alt.3a9a1d19.jpg": "/react-tantalus/static/media/mens4alt.3a9a1d19.jpg",
+    "static/media/mens5.e7fc0f4b.jpg": "/react-tantalus/static/media/mens5.e7fc0f4b.jpg",
+    "static/media/mens5alt.abee6604.jpg": "/react-tantalus/static/media/mens5alt.abee6604.jpg",
+    "static/media/mens6.9dd87d9f.jpg": "/react-tantalus/static/media/mens6.9dd87d9f.jpg",
+    "static/media/mens6alt.a52ee894.jpg": "/react-tantalus/static/media/mens6alt.a52ee894.jpg",
+    "static/media/mens7.8102549d.jpg": "/react-tantalus/static/media/mens7.8102549d.jpg",
+    "static/media/mens7alt.cccc26c1.jpg": "/react-tantalus/static/media/mens7alt.cccc26c1.jpg",
+    "static/media/mens8.26a418a5.jpg": "/react-tantalus/static/media/mens8.26a418a5.jpg",
+    "static/media/mens8alt.d5ba5f54.jpg": "/react-tantalus/static/media/mens8alt.d5ba5f54.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e1773ff7.js",
-    "static/js/2.adc75cd9.chunk.js",
-    "static/css/main.1455350f.chunk.css",
-    "static/js/main.b6f61784.chunk.js"
+    "static/js/2.04cae899.chunk.js",
+    "static/css/main.e13263b4.chunk.css",
+    "static/js/main.f4d7597e.chunk.js"
   ]
 }
