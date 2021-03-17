@@ -18,19 +18,19 @@ const ProductPage = ({heading, section = 'mens'}) => {
   }
 
   return (
-  <>
-  {openDetails && <DetailsPage product = {activeProduct} handleClick = {() => setOpenDetails(false)}/>}
-   {!openDetails && 
-    <Container maxWidth = 'lg' style = {containerStyle}>
-      <Typography variant = 'h4' gutterBottom>
-        {heading}
-      </Typography>
-      <div className = 'gridProduct' style = {gridContainer}>
-        {productArray.filter(product => product.sectionId.includes(section)).map(product => (
-          <ProductPreview key = {product.id} handleClick = {handleClick} product = {product}/>
-        ))}
-      </div>
-    </Container>
+    <>
+    {openDetails && <DetailsPage product = {activeProduct} handleClick = {() => setOpenDetails(false)}/>}
+    {!openDetails && 
+      <Container maxWidth = 'lg' style = {containerStyle}>
+        <Typography variant = 'h3' gutterBottom>
+          {heading}
+        </Typography>
+        <div className = 'gridProduct' style = {gridContainer}>
+          {productArray.filter(product => product.sectionId.includes(section)).map(product => (
+            <ProductPreview key = {product.id} handleClick = {handleClick} product = {product}/>
+          ))}
+        </div>
+      </Container>
     }
     </>
   );
@@ -41,11 +41,12 @@ export default ProductPage;
 
 const containerStyle = {
   marginTop: '1rem',
+  marginBottom: '1rem',
   padding: '0rem 2rem'
 }
 const gridContainer = {
   display: 'grid',
-  gridGap: '2em',
+  
   
 }
 

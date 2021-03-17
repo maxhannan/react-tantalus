@@ -1,6 +1,6 @@
 
 .container{
-  animation: expand 350ms ease-in-out;
+  animation: appear 500ms ease-in-out;
 }
 .imgContainer{
   position: relative;

@@ -13,10 +13,10 @@ const Navbar = () => {
   }
   return ( 
     <nav className = 'navbar'>
-      <div className = 'brand-title'><Link to="/">Tantalus</Link></div>
+      <div className = 'brand-title'><Link to="/react-tantalus/">Tantalus</Link></div>
       <div className="btnHolder">
-        <IconButton component = {Link} to = '/' >
-          <Badge badgeContent={0} color = 'secondary'>
+        <IconButton component = {Link} to = '/react-tantalus/cart' >
+          <Badge badgeContent={2} color = 'secondary'>
             <MdShoppingCart color = '#252525'/>
           </Badge>
         </IconButton>
@@ -26,16 +26,16 @@ const Navbar = () => {
       </div>
       <div className = {menuOpen ? 'navbar-links active' : 'navbar-links'}>
         <ul>
-          <li><Link to="/men" onClick = {closeMenu}><Typography variant = 'subtitle1'>Men's</Typography></Link></li>
-          <li><Link to="/women" onClick = {closeMenu}><Typography variant = 'subtitle1'>Women's</Typography></Link></li>
-          <li><Link to="/home" onClick = {closeMenu}><Typography variant = 'subtitle1'>Home</Typography></Link></li>
-          <li><Link to="/lifestyle" onClick = {closeMenu}><Typography variant = 'subtitle1'>Lifestyle</Typography></Link></li>
-          <li><Link to="/sale" onClick = {closeMenu}><Typography variant = 'subtitle1' color="secondary">Sale</Typography></Link></li>
+          <li><Link to="/react-tantalus/men" onClick = {closeMenu}><Typography variant = 'subtitle1'>Men's</Typography></Link></li>
+          <li><Link to="/react-tantalus/women" onClick = {closeMenu}><Typography variant = 'subtitle1'>Women's</Typography></Link></li>
+          <li><Link to="/react-tantalus/home" onClick = {closeMenu}><Typography variant = 'subtitle1'>Home</Typography></Link></li>
+          <li><Link to="/react-tantalus/lifestyle" onClick = {closeMenu}><Typography variant = 'subtitle1'>Lifestyle</Typography></Link></li>
+          <li><Link to="/react-tantalus/sale" onClick = {closeMenu}><Typography variant = 'subtitle1' color="secondary">Sale</Typography></Link></li>
         </ul>
       </div>
       <div className={menuOpen ? 'cartBtn' : 'cartBtn'}>
-      <IconButton component = {Link} to = '/'>
-        <Badge badgeContent={0} color="secondary">
+      <IconButton component = {Link} to = '/react-tantalus/cart'>
+        <Badge badgeContent={2} color="secondary">
           <MdShoppingCart color = '#252525'/>
         </Badge>
       </IconButton>

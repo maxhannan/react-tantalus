@@ -1,6 +1,8 @@
+import ProductPage from "../ProductPage/ProductPage";
+
 const Home = () => {
   return ( 
-    <h1>Hello From Home</h1>
+    <ProductPage heading = 'Home Goods' section = 'home'/>
    );
 }
  

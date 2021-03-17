@@ -6,19 +6,29 @@
   padding: 0em 2em;
   animation: appear 1s ease    ;
 }
+.detailsInfoContainer {
+  height: 80vh;
+}
+
+.detailsImgContainer{
+  height: 80vh;
+}
 
 .closeBtnHolder {
-  height: 15vh; 
-  position: absolute;
-  top: 10vh;
-  right: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  
 }
 
 .detailsPage {
   display: flex;
-  margin-top: 6vh;
-  height: 80vh;
+  
 }
+.imgStyle{
+  max-height: 100%;
+  max-width: 100%;
+}
+
 
 .formContainer {
   display: flex;
@@ -34,11 +44,22 @@
     opacity: 0;
   }
   100%{
-    opacit: 1;
+    opacity: 1;
   }
 }
 @media (max-width: 768px){
-
+  .detailsInfoContainer {
+    height: 40vh;
+  }
+  .imgStyle{
+    max-height: 95%;
+    max-width: 100%;
+  }
+  
+  .detailsImgContainer{
+    height: 60vh;
+  }
+  
   .detailsPage{
     flex-direction: column;
   }

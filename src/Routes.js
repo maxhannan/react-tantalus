@@ -6,18 +6,20 @@ import Mens from './Components/Pages/Mens';
 import Navbar from './Components/Navbar/Navbar';
 import Sale from './Components/Pages/Sale';
 import Womens from './Components/Pages/Womens';
+import Cart from './Components/Cart/Cart';
 
 const Routes = () => {
   return ( 
     <BrowserRouter>
       <Navbar/>
       <Switch>
-        <Route exact path = '/' component = {Landing}/>
-        <Route exact path = '/men' component = {Mens}/>
-        <Route exact path = '/women' component = {Womens}/>
-        <Route exact path = '/home' component = {Home}/>
-        <Route exact path = '/lifestyle' component = {Lifestyle}/>
-        <Route exact path = '/sale' component = {Sale}/>
+        <Route exact path = '/react-tantalus' component = {Landing}/>
+        <Route exact path = '/react-tantalus/men' component = {Mens}/>
+        <Route exact path = '/react-tantalus/women' component = {Womens}/>
+        <Route exact path = '/react-tantalus/home' component = {Home}/>
+        <Route exact path = '/react-tantalus/lifestyle' component = {Lifestyle}/>
+        <Route exact path = '/react-tantalus/sale' component = {Sale}/>
+        <Route exact path = '/react-tantalus/cart' component = {Cart}/>
       </Switch>
     </BrowserRouter>
    );
