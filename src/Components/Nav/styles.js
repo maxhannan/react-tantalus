@@ -14,10 +14,10 @@ export const useStyles = makeStyles(() => ({
   logo: {
     fontFamily: "'Libre Barcode 39 Text', cursive",
 
-    textAlign: "left",
+    textAlign: "center",
     textDecoration: 'none',
     "@media (max-width: 1000px)": {
-      marginLeft: '20px',
+      marginLeft: '0px',
     },
   },
   menuButton: {

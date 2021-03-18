@@ -49,13 +49,12 @@ const Nav = () => {
         <IconButton
           {...{
             edge: "start",
-            color: "#1b1b1b",
             "aria-label": "menu",
             "aria-haspopup": "true",
             onClick: handleDrawerOpen,
           }}
         >
-          <MenuIcon />
+          <MenuIcon color = '#222' />
         </IconButton>
         <Drawer
           {...{
@@ -66,7 +65,7 @@ const Nav = () => {
         >
           <div className={drawerContainer} onClick = {handleDrawerClose}>{getDrawerChoices()}</div>
         </Drawer>
-        <div>{tantalusLogo}</div>
+        <div style = {{width: '100%', display: 'flex', justifyContent: 'center'}}>{tantalusLogo}</div>
         <div  style = {{marginLeft: 'auto'}}>
          {CartIcon}
         </div>
@@ -94,7 +93,7 @@ const Nav = () => {
   };
 
   const tantalusLogo = (
-    <Typography variant="h4" color = 'primary' className = {logo} component = {RouterLink} to = '/react-tantalus/'>
+    <Typography variant="h4" color = 'secondary' className = {logo} component = {RouterLink} to = '/react-tantalus/'>
       Tantalus
     </Typography>
   );
@@ -102,13 +101,13 @@ const Nav = () => {
   const CartIcon = (
     <IconButton component = {RouterLink} to = '/react-tantalus/cart'>
       <Badge badgeContent={2} color = 'secondary'>
-        <RiShoppingCart2Line color = '#1b1b1b'/>
+        <RiShoppingCart2Line color = '#333'/>
       </Badge>
     </IconButton>
   );
 
   const getMenuButtons = () => {
-    return headersData.map(({ label, href, color = '#1b1b1b' }) => {
+    return headersData.map(({ label, href, color = 'default' }) => {
       return (
         <Button
           {...{
