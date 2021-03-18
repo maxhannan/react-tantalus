@@ -1,57 +1,49 @@
+
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import Home from './Components/Pages/Home';
-import Landing from './Components/Pages/Landing';
-import Lifestyle from './Components/Pages/Lifestyle';
-import Mens from './Components/Pages/Mens';
-import Navbar from './Components/Navbar/Navbar';
-import Sale from './Components/Pages/Sale';
-import Womens from './Components/Pages/Womens';
-import Cart from './Components/Cart/Cart';
-import { useState } from 'react';
+import Nav from "./Components/Nav/Nav";
+import HomePage from "./Components/HomePage";
+import ProductGrid from "./Components/ProductGrid";
+import Cart from "./Components/Cart";
+import DetailsPage from './Components/DetailsPage';
+// import { useState } from 'react';
 
 const Routes = () => {
-  const [cart, setCart] = useState([])
- 
-  const handleAddToCart = (item) => {
-    const itemInCart = cart.filter(
-      cartItem => cartItem.product.id === item.product.id
-    )
-    if(itemInCart.length){
-      setCart(cart.map(cartItem => {
-        if(cartItem.product.id === item.product.id){
-          cartItem.qty += item.qty
-        }
-        return cartItem
-      }))
-    }else{
-      setCart([...cart, item])
-    }
-  }
+  // const [cart, setCart] = useState([]);
+  // const [activeProduct, setActiveProduct] = useState({});
   
-  return ( 
+  return (
     <BrowserRouter>
-      <Navbar/>
+      <Nav/>
+      {/* Padding Div, to keep content under nav */}
+      <div style = {{height: '10vh'}}></div>
       <Switch>
-        <Route exact path = '/react-tantalus' component = {Landing}></Route>
-        <Route exact path = '/react-tantalus/men'>
-          <Mens handleAddToCart = {handleAddToCart}/>
+        <Route exact path = '/react-tantalus/'>
+          <HomePage/>
         </Route>
-        <Route exact path = '/react-tantalus/women' >
-          <Womens handleAddToCart = {handleAddToCart}/>
+        <Route exact path = '/react-tantalus/men'>
+          <ProductGrid section = 'men'/>
+        </Route>
+        <Route exact path = '/react-tantalus/women'>
+          <ProductGrid section = 'women'/>
         </Route>
         <Route exact path = '/react-tantalus/home'>
-          <Home handleAddToCart = {handleAddToCart}/>
+          <ProductGrid section = 'home'/>
         </Route>
         <Route exact path = '/react-tantalus/lifestyle'>
-          <Lifestyle handleAddToCart = {handleAddToCart}/>
+          <ProductGrid section = 'lifestyle'/>
         </Route>
         <Route exact path = '/react-tantalus/sale'>
-          <Sale handleAddToCart = {handleAddToCart}/>
+          <ProductGrid section = 'sale'/>
         </Route>
-        <Route exact path = '/react-tantalus/cart' component = {Cart}></Route>
+        <Route exact path = '/react-tantalus/details'>
+          <DetailsPage />
+        </Route>
+        <Route exact path = '/react-tantalus/cart'>
+          <Cart/>
+        </Route>
       </Switch>
     </BrowserRouter>
-   );
+  );
 }
- 
+
 export default Routes;

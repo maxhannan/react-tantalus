@@ -77,7 +77,7 @@ export const productArray = [
   },
   {
     id: uniqid(),
-    text: 'Metallica Distressed Washed Crew Neck Sweatshirt',
+    text: 'Metallica Crew Neck Sweatshirt',
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
@@ -142,7 +142,7 @@ export const productArray = [
   },
   {
     id: uniqid(),
-    text: 'Metallica Distressed Washed Crew Neck Sweatshirt',
+    text: 'Metallica Crew Neck Sweatshirt',
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
@@ -207,7 +207,7 @@ export const productArray = [
   },
   {
     id: uniqid(),
-    text: 'Metallica Distressed Washed Crew Neck Sweatshirt',
+    text: 'Metallica Crew Neck Sweatshirt',
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
@@ -272,7 +272,7 @@ export const productArray = [
   },
   {
     id: uniqid(),
-    text: 'Metallica Distressed Washed Crew Neck Sweatshirt',
+    text: 'Metallica Crew Neck Sweatshirt',
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
