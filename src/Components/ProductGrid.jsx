@@ -16,10 +16,10 @@ const ProductGrid = ({section = 'men'}) => {
     <>
     {loading &&  
     <div style = {{display: 'flex', height: '90vh', justifyContent: 'center', alignItems: 'center'}}>
-    <CircularProgress color="secondary" size = '3rem' />
+      <CircularProgress color="secondary" size = '3rem' />
     </div>
     }
-    {!loading && <Grid container spacing={3} style = {{animation: 'appear 500ms ease-in-out'}}>
+    {!loading && <Grid container spacing={1} style = {{animation: 'appear 500ms ease-in-out'}}>
       {filteredProducts.map(product => (
         <ProductBox key = {product.id} product = {product}/>
       ))}

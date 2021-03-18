@@ -28,7 +28,7 @@ const ProductBox = ({product}) => {
   const classes = useStyles()
   return ( 
     <Grid item  xs = {12} sm = {6} md = {4} lg = {3}>
-      <Paper className={classes.paper}>
+      <Paper elevation = {0} className={classes.paper}>
       <div >
         <img 
         className={classes.imgStyle} 
@@ -39,17 +39,17 @@ const ProductBox = ({product}) => {
        
       </div>
         <div className={classes.typeContainer}>
-          <Typography variant = 'h6' color = 'textPrimary' style = {{fontWeight: '300'}} gutterBottom>
+          <Typography variant = 'body1' color = 'textPrimary' style = {{fontWeight: '300'}} gutterBottom>
             {product.text}
           </Typography>
-          <Typography variant = 'h6' color = 'textSecondary' gutterBottom>
+          <Typography variant = 'body2' color = 'textSecondary' gutterBottom>
             ${product.price}
           </Typography>
-          <div style = {{position: 'absolute', bottom: '0', right: '0'}}>
+          {/* <div style = {{position: 'absolute', bottom: '0', right: '0'}}>
           <IconButton color = 'secondary' component = {RouterLink} to = '/react-tantalus/details'>
             <MdInfoOutline/>
           </IconButton>
-        </div>
+        </div> */}
         </div>
       </Paper>
     </Grid>
