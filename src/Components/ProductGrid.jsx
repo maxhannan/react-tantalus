@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {productArray} from '../ProductArray'
 import ProductBox from "./ProductBox";
 
-const ProductGrid = ({section = 'men'}) => {
+const ProductGrid = ({section, handleOpenDetails}) => {
   const filteredProducts = productArray.filter(product => product.sectionId.includes(section))
  
   const ProductElements = () =>{
@@ -21,7 +21,7 @@ const ProductGrid = ({section = 'men'}) => {
     }
     {!loading && <Grid container spacing={1} style = {{animation: 'appear 500ms ease-in-out'}}>
       {filteredProducts.map(product => (
-        <ProductBox key = {product.id} product = {product}/>
+        <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
       ))}
     </Grid>}
     </>

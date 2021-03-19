@@ -1,12 +1,14 @@
 import {  Typography, Grid, Paper, makeStyles, IconButton, Button } from "@material-ui/core";
-import {Link as RouterLink } from 'react-router-dom'
-import {MdInfoOutline, MdAddCircleOutline, MdAddShoppingCart} from 'react-icons/md'
+import { Link as RouterLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
+    "@media (max-width: 1000px)":{
+      padding: '0px',
+    } ,
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -24,32 +26,30 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProductBox = ({product}) => {
+const ProductBox = ({product, handleOpenDetails}) => {
   const classes = useStyles()
   return ( 
-    <Grid item  xs = {12} sm = {6} md = {4} lg = {3}>
+    <Grid item  xs = {6} sm = {6} md = {4} lg = {3}>
       <Paper elevation = {0} className={classes.paper}>
-      <div >
-        <img 
-        className={classes.imgStyle} 
-        src = {product.pic} alt=""
-        onMouseOver={e => (e.currentTarget.src = product.altPic)}
-        onMouseOut={e => (e.currentTarget.src = product.pic)}
-        />
-       
-      </div>
+        <div >
+        <RouterLink to = '/react-tantalus/details'>
+          <img 
+          onClick = {(e) => handleOpenDetails(e.target.id)}
+          id = {product.id}
+          className={classes.imgStyle} 
+          src = { product.pic } alt = { product.text }
+          onMouseOver={e => (e.currentTarget.src = product.altPic)}
+          onMouseOut={e => (e.currentTarget.src = product.pic)}
+          />   
+          </RouterLink>  
+        </div>
         <div className={classes.typeContainer}>
-          <Typography variant = 'body1' color = 'textPrimary' style = {{fontWeight: '300'}} gutterBottom>
+          <Typography variant = 'body1' color = 'textPrimary' gutterBottom>
             {product.text}
           </Typography>
           <Typography variant = 'body2' color = 'textSecondary' gutterBottom>
             ${product.price}
           </Typography>
-          {/* <div style = {{position: 'absolute', bottom: '0', right: '0'}}>
-          <IconButton color = 'secondary' component = {RouterLink} to = '/react-tantalus/details'>
-            <MdInfoOutline/>
-          </IconButton>
-        </div> */}
         </div>
       </Paper>
     </Grid>
