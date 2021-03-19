@@ -1,4 +1,4 @@
-import { Container, Grid, LinearProgress, CircularProgress } from "@material-ui/core";
+import { Container, Grid, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import {productArray} from '../ProductArray'
 import ProductBox from "./ProductBox";
@@ -19,7 +19,7 @@ const ProductGrid = ({section, handleOpenDetails}) => {
       <CircularProgress color="secondary" size = '3rem' />
     </div>
     }
-    {!loading && <Grid container spacing={1} style = {{animation: 'appear 500ms ease-in-out'}}>
+    {!loading && <Grid container spacing={1} style = {{animation: 'appear 500ms ease-in-out', marginTop: '2vh'}}>
       {filteredProducts.map(product => (
         <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
       ))}

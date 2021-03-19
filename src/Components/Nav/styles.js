@@ -2,7 +2,8 @@ import {makeStyles} from '@material-ui/core'
 export const useStyles = makeStyles(() => ({
   header: {
     backgroundColor: "white",
-    opacity: '.9',
+    boxShadow: 'none',
+    borderBottom: '1px solid #ccc',
     "@media (max-width: 1000px)": {
       paddingLeft: 0,
       paddingRight: 0,
@@ -13,7 +14,6 @@ export const useStyles = makeStyles(() => ({
   },
   logo: {
     fontFamily: "'Libre Barcode 39 Text', cursive",
-
     textAlign: "center",
     textDecoration: 'none',
     "@media (max-width: 1000px)": {
@@ -32,6 +32,6 @@ export const useStyles = makeStyles(() => ({
  },
  drawerContainer: {
   padding: "10px 0px",
-  width: '80vw'
+  width: '100vw'
 }
 }));

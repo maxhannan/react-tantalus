@@ -4,6 +4,7 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import {MdMenu as MenuIcon} from 'react-icons/md'
 import {RiShoppingCart2Line} from 'react-icons/ri'
+import {MdClose} from 'react-icons/md'
 // Style Sheet
 import {useStyles} from './styles'
 // Menu Options
@@ -63,7 +64,10 @@ const Nav = () => {
             onClose: handleDrawerClose,
           }}
         >
-          <div className={drawerContainer} onClick = {handleDrawerClose}>{getDrawerChoices()}</div>
+          <div style = {{width: '100%',height: '7vh', display: 'flex', justifyContent: 'flex-end',  borderBottom: '1px solid #ccc'}}>
+            <IconButton onClick = {handleDrawerClose} color = 'secondary'><MdClose/></IconButton>
+          </div>
+          <div  className={drawerContainer} onClick = {handleDrawerClose}>{getDrawerChoices()}</div>
         </Drawer>
         <div style = {{width: '100%', display: 'flex', justifyContent: 'center'}}>{tantalusLogo}</div>
         <div  style = {{marginLeft: 'auto'}}>
@@ -86,7 +90,7 @@ const Nav = () => {
             key: label,
           }}
         >
-          <MenuItem style = {{fontWeight: 300, fontSize: '8vw'}}>{label}</MenuItem>
+          <MenuItem style = {{fontWeight: 500, fontSize: '8vw'}}>{label}</MenuItem>
         </Link>
       );
     });
