@@ -13,7 +13,7 @@ export const useStyles = makeStyles(() => ({
     }
   },
   logo: {
-    fontFamily: "'Libre Barcode 39 Text', cursive",
+    fontFamily: "'Monoton', cursive",
     textAlign: "center",
     textDecoration: 'none',
     "@media (max-width: 1000px)": {
@@ -21,17 +21,20 @@ export const useStyles = makeStyles(() => ({
     },
   },
   menuButton: {
-    fontFamily: "Roboto, sans-serif",
-    fontWeight: 300,
-    fontSize: "14px",
-    marginLeft: "38px",
+    fontFamily: "'Montserrat', sans-serif",
+    fontWeight: 400,
+    fontSize: '12px',
+    marginLeft: "30px",
  },
+
  toolbar: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
+    alignItems: 'center'
  },
  drawerContainer: {
-  padding: "10px 0px",
+   
+  padding: "0px 0px",
   width: '100vw'
 }
 }));

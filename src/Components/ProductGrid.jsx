@@ -29,7 +29,7 @@ const ProductGrid = ({section, handleOpenDetails}) => {
   }
   
   return ( 
-    <Container maxWidth = 'lg' >
+    <Container  maxWidth = 'lg'>
         <ProductElements/>
     </Container>
    );

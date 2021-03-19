@@ -35,7 +35,7 @@ const Nav = () => {
       <Toolbar className = {toolbar}>
         {tantalusLogo}
         <div>{getMenuButtons()}</div>
-        <div style = {{width: '15%', display: 'flex', justifyContent: 'flex-end'}}>{CartIcon}</div>
+        <div style = {{marginLeft: 'auto'}}>{CartIcon}</div>
       </Toolbar>
     );
   };
@@ -90,7 +90,7 @@ const Nav = () => {
             key: label,
           }}
         >
-          <MenuItem style = {{fontWeight: 500, fontSize: '8vw'}}>{label}</MenuItem>
+          <MenuItem style = {{fontWeight: 400, fontSize: '8vw', fontFamily: "'Montserrat', sans-serif",}}>{label}</MenuItem>
         </Link>
       );
     });

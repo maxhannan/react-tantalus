@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(1),
     "@media (max-width: 1000px)":{
-      padding: '0px',
+      padding: '8px',
     } ,
     textAlign: 'center',
     color: theme.palette.text.secondary,
@@ -44,10 +44,10 @@ const ProductBox = ({product, handleOpenDetails}) => {
           </RouterLink>  
         </div>
         <div className={classes.typeContainer}>
-          <Typography variant = 'body1' color = 'textPrimary' gutterBottom>
+          <Typography variant = 'body2' color = 'textPrimary' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             {product.text}
           </Typography>
-          <Typography variant = 'body2' color = 'textSecondary' gutterBottom>
+          <Typography variant = 'body2' color = 'textSecondary'  style = {{fontFamily: "'Montserrat', sans-serif"}}gutterBottom>
             ${product.price}
           </Typography>
         </div>

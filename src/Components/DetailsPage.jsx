@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   container:{
     display: 'flex',
     animation: 'appear 500ms ease',
+    marginBottom: '5vh',
     "@media (max-width: 1000px)":{
       flexDirection: 'column'
     }
@@ -44,11 +45,11 @@ const useStyles = makeStyles((theme) => ({
     } 
   },
   btnContainer:{
-    width: '85%', 
+    width: '95%', 
     display: 'flex', 
     justifyContent: 'flex-end',
     "@media (max-width: 1000px)":{
-      width: '95%',
+      width: '98%',
     } 
   },
   formContainer:{
@@ -65,10 +66,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
     minWidth: 120,
+    fontFamily: "'Montserrat', sans-serif",
 
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
+    fontFamily: "'Montserrat', sans-serif",
   },
 
 }));
@@ -105,13 +108,13 @@ const DetailsPage = ({product}) => {
       </div>
       <div className={classes.infoContainer}>
         <div className={classes.formContainer}>
-          <Typography variant = 'h4' style = {{fontWeight: '300'}} gutterBottom>
+          <Typography variant = 'h5' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             {product.text}
           </Typography>
-          <Typography variant = 'h5' gutterBottom>
+          <Typography variant = 'h6' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             ${product.price}
           </Typography>
-          <FormControl variant="outlined" className={classes.formControl} >
+          <FormControl variant="outlined" className={classes.formControl}>
             <InputLabel id="qtyLabel">Quantity</InputLabel>
             <Select
             fullWidth
@@ -129,9 +132,10 @@ const DetailsPage = ({product}) => {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
-          <FormControl variant="outlined" className={classes.formControl} >
+          <FormControl variant="outlined" className={classes.formControl}  style = {{marginBottom: '2vh'}} >
             <InputLabel id="sizeLabel">Size</InputLabel>
             <Select
+            style = {{fontFamily: "'Montserrat', sans-serif",}}
             fullWidth
               labelId="sizeLabel"
               id="sizeSelect"
@@ -147,7 +151,7 @@ const DetailsPage = ({product}) => {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
-          <Button variant = 'contained' color = 'secondary' >Add To cart</Button>
+          <Button variant = 'outlined' color = 'secondary' style = {{fontFamily: "'Montserrat', sans-serif",}} >Add To cart</Button>
         </div>
       </div>
     </Container>

@@ -16,6 +16,9 @@ const useStyles = makeStyles(() => ({
     "@media (max-width: 1000px)":{
       height: '8vh',
     },
+    "@media (max-width: 600px)":{
+      height: '7vh',
+    },
   }
 }))
 const Routes = () => {

@@ -1,6 +1,10 @@
 
 export const headersData = [
   {
+    label: "New Arrivals",
+    href: "/react-tantalus/men",
+  },
+  {
     label: "Men",
     href: "/react-tantalus/men",
   },
@@ -13,7 +17,7 @@ export const headersData = [
     href: "/react-tantalus/home",
   },
   {
-    label: "Lifestyle Goods",
+    label: "Lifestyle",
     href: "/react-tantalus/lifestyle",
   },
   {
