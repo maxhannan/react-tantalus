@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
   paddingDiv: {
-    height: '10vh',
+    height: '8vh',
     "@media (max-width: 1000px)":{
       height: '8vh',
     },
@@ -50,7 +50,7 @@ const Routes = () => {
   )
 
   const getCartTotal = () => (
-    cart.map(cartItem => (cartItem.price * cartItem.qty)).reduce(reducer,0)
+    cart.map(cartItem => (cartItem.price * cartItem.qty)).reduce(reducer,0).toFixed(2)
   )
 
   return (
@@ -65,31 +65,39 @@ const Routes = () => {
         <Route exact path = '/react-tantalus/newArrivals'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
+          heading = 'New Arrivals'
           section = 'new'/>
         </Route>
         <Route exact path = '/react-tantalus/men'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
+          heading = "Men's Clothing"
           section = 'men'/>
         </Route>
         <Route exact path = '/react-tantalus/women'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
+          heading = "Women's Clothing"
+
           section = 'women'/>
         </Route>
         <Route exact path = '/react-tantalus/home'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
+          heading = "Home Goods"
+
           section = 'home'/>
         </Route>
         <Route exact path = '/react-tantalus/lifestyle'>
           <ProductGrid 
-          handleOpenDetails = {handleOpenDetails}
+          handleOpenDetails = {handleOpenDetails}  
+          heading = "Lifestyle"
           section = 'lifestyle'/>
         </Route>
         <Route exact path = '/react-tantalus/sale'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
+          heading = 'On Sale'
           section = 'sale'/>
         </Route>
         <Route exact path = '/react-tantalus/details'>

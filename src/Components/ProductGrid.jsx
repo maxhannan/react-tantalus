@@ -1,10 +1,10 @@
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import {productArray} from '../ProductArray'
 import Loader from "./Loader";
 import ProductBox from "./ProductBox";
 
-const ProductGrid = ({section, handleOpenDetails}) => {
+const ProductGrid = ({section, handleOpenDetails, heading}) => {
   const filteredProducts = productArray
     .filter(product => product.sectionId.includes(section));
 
@@ -18,11 +18,16 @@ const ProductGrid = ({section, handleOpenDetails}) => {
     if(loading) return <Loader />
 
     return(
-      <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out', marginTop: '2vh'}}>
+      <>
+      <Typography variant = 'h4'  style = {{ animation: 'fadeIn 500ms ease-in-out',fontFamily: "'Montserrat', sans-serif", fontWeight: '400', marginTop: '1rem', marginBottom: '.5rem'}} >
+        {heading}
+      </Typography>
+      <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out'}}>
         {filteredProducts.map(product => (
           <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
         ))}
       </Grid>
+      </>
     );
   }
   
