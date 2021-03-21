@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MdClose } from 'react-icons/md'
-import { makeStyles } from '@material-ui/core/styles';
+import { useStyles } from './styles';
 import { 
   Button, 
   Container, 
@@ -12,78 +12,14 @@ import {
   FormControl, 
   Select
 } from "@material-ui/core";
-
-import Loader from "./Loader";
-
-const useStyles = makeStyles((theme) => ({
-  container:{
-    display: 'flex',
-    animation: 'appear 500ms ease',
-    marginBottom: '2vh',
-    "@media (max-width: 1000px)":{
-      flexDirection: 'column'
-    }
-  },
-  imgContainer: {
-    width: '50%',
-    height: '80vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    "@media (max-width: 1000px)":{
-      width: '100%',
-      height: '100%'
-    } 
-  },
-  imgStyle: {
-    maxWidth: '100%', 
-    maxHeight: '100%'
-  },
-  infoContainer: {
-    width: '50%',
-    display: 'flex', 
-    flexDirection: 'column',
-    "@media (max-width: 1000px)":{
-      width: '100%',
-    } 
-  },
-  btnContainer:{
-    width: '95%', 
-    display: 'flex', 
-    justifyContent: 'flex-end',
-    "@media (max-width: 1000px)":{
-      width: '98%',
-    } 
-  },
-  formContainer:{
-    height: '100%', 
-    display: 'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'center',  
-    padding: '1.5rem',
-    "@media (max-width: 1000px)":{
-      padding: '.5rem',
-    } 
-  },
-  formControl: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-    minWidth: 120,
-    fontFamily: "'Montserrat', sans-serif",
-
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-    fontFamily: "'Montserrat', sans-serif",
-  },
-}));
+import Loader from "../Loader";
 
 const DetailsPage = ({ product, handleAddToCart }) => {
   const classes = useStyles();
   const history = useHistory()
   const [loading, setLoading] = useState(true)
   useEffect(()=>{
-    setTimeout(() =>  setLoading(false) , 1500);
+    setTimeout(() =>  setLoading(false) , 500);
   },[])
 
   const handleSubmit = (e) => {
@@ -100,7 +36,6 @@ const DetailsPage = ({ product, handleAddToCart }) => {
         <MdClose />
       </IconButton>
     </div>
-
     <Container maxWidth = 'md' className = {classes.container}>
       <div className = {classes.imgContainer}>
         <img src={product.pic} 
@@ -148,7 +83,6 @@ const DetailsPage = ({ product, handleAddToCart }) => {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
-
           <Button variant = 'outlined' color = 'secondary' type = 'submit' style = {{fontFamily: "'Montserrat', sans-serif",}} >Add To cart</Button>
         </form>
       </div>

@@ -2,7 +2,7 @@
 export const headersData = [
   {
     label: "New Arrivals",
-    href: "/react-tantalus/men",
+    href: "/react-tantalus/newArrivals",
   },
   {
     label: "Men",

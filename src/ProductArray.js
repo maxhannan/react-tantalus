@@ -33,7 +33,7 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['men', 'sale']
+    sectionId: ['men', 'sale', 'new']
   },
   {
     id: uniqid(),
@@ -49,7 +49,7 @@ export const productArray = [
     price: 59.99,
     pic: mens5,
     altPic: mens5alt,
-    sectionId: ['men']
+    sectionId: ['men', 'new']
   },
   {
     id: uniqid(),
@@ -187,7 +187,7 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['home', 'sale']
+    sectionId: ['home', 'sale', 'new']
   },
   {
     id: uniqid(),
@@ -211,7 +211,7 @@ export const productArray = [
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
-    sectionId: ['home', 'sale']
+    sectionId: ['home', 'sale', 'new']
   },
   //lifestyle
   {

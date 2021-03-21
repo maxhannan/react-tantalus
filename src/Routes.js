@@ -3,11 +3,10 @@ import Nav from "./Components/Nav/Nav";
 import HomePage from "./Components/HomePage";
 import ProductGrid from "./Components/ProductGrid";
 import Cart from "./Components/Cart";
-import DetailsPage from './Components/DetailsPage';
+import DetailsPage from './Components/DetailsPage/DetailsPage';
 import { useState } from 'react';
 import { productArray } from './ProductArray'
 import { makeStyles } from '@material-ui/core'
-
 
 const useStyles = makeStyles(() => ({
   paddingDiv: {
@@ -26,29 +25,33 @@ const Routes = () => {
   const [activeProduct, setActiveProduct] = useState({});
   const classes  = useStyles()
 
+  const getProductById = (id) => productArray.find(product => product.id === id)
+
   const handleOpenDetails = (id) => {
-    const newProduct = productArray.find(product => product.id === id)
-    console.log(newProduct)
-    setActiveProduct(newProduct)
+    setActiveProduct(getProductById(id));
   }
 
   const handleAddToCart = (id, newQty = 1) => {
-    const newProduct = productArray.find(product => product.id === id)
+    const newProduct = getProductById(id)
+
     if(cart.find(cartItem => cartItem.id === id)){
       setCart(cart => cart.map(cartItem => {
         if(cartItem.id === id) return {...cartItem, qty: cartItem.qty + newQty}
-
         return cartItem
       }))
       return
     }
     setCart([...cart, {...newProduct, qty: 1}])
   }
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-  const getCartSize = () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    return cart.map(cartItem => cartItem.qty).reduce(reducer,0)
-  }
+  const getCartSize = () => ( 
+    cart.map(cartItem => cartItem.qty).reduce(reducer,0)
+  )
+
+  const getCartTotal = () => (
+    cart.map(cartItem => (cartItem.price * cartItem.qty)).reduce(reducer,0)
+  )
 
   return (
     <BrowserRouter>
@@ -58,6 +61,11 @@ const Routes = () => {
       <Switch>
         <Route exact path = '/react-tantalus/'>
           <HomePage/>
+        </Route>
+        <Route exact path = '/react-tantalus/newArrivals'>
+          <ProductGrid 
+          handleOpenDetails = {handleOpenDetails}
+          section = 'new'/>
         </Route>
         <Route exact path = '/react-tantalus/men'>
           <ProductGrid 
@@ -91,7 +99,11 @@ const Routes = () => {
           />
         </Route>
         <Route exact path = '/react-tantalus/cart'>
-          <Cart cart = {cart} />
+          <Cart 
+            cart = {cart} 
+            getCartTotal = {getCartTotal}
+            getCartSize = {getCartSize}
+          />
         </Route>
       </Switch>
     </BrowserRouter>

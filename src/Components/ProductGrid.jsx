@@ -12,13 +12,13 @@ const ProductGrid = ({section, handleOpenDetails}) => {
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-      setTimeout(() =>  setLoading(false) , 1500);
+      setTimeout(() =>  setLoading(false) , 500);
     },[])
 
     if(loading) return <Loader />
 
     return(
-      <Grid container spacing={1} style = {{animation: 'appear 500ms ease-in-out', marginTop: '2vh'}}>
+      <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out', marginTop: '2vh'}}>
         {filteredProducts.map(product => (
           <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
         ))}
