@@ -10,7 +10,7 @@ import {useStyles} from './styles'
 // Menu Options
 import {headersData} from './headersData'
 
-const Nav = () => {
+const Nav = ({getCartSize}) => {
   const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
 
   const [state, setState] = useState({
@@ -104,7 +104,7 @@ const Nav = () => {
 
   const CartIcon = (
     <IconButton component = {RouterLink} to = '/react-tantalus/cart'>
-      <Badge badgeContent={2} color = 'secondary'>
+      <Badge badgeContent={getCartSize()} color = 'secondary'>
         <RiShoppingCart2Line color = '#333'/>
       </Badge>
     </IconButton>

@@ -1,20 +1,25 @@
 import { useHistory } from "react-router-dom";
-import { Button, Container, IconButton, Typography } from "@material-ui/core";
-import {MdClose} from 'react-icons/md'
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import { useState, useEffect } from "react";
+import { MdClose } from 'react-icons/md'
+import { makeStyles } from '@material-ui/core/styles';
+import { 
+  Button, 
+  Container, 
+  IconButton, 
+  Typography, 
+  InputLabel, 
+  MenuItem, 
+  FormControl, 
+  Select
+} from "@material-ui/core";
+
 import Loader from "./Loader";
 
 const useStyles = makeStyles((theme) => ({
   container:{
     display: 'flex',
     animation: 'appear 500ms ease',
-    marginBottom: '5vh',
+    marginBottom: '2vh',
     "@media (max-width: 1000px)":{
       flexDirection: 'column'
     }
@@ -71,10 +76,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     fontFamily: "'Montserrat', sans-serif",
   },
-
 }));
 
-const DetailsPage = ({product}) => {
+const DetailsPage = ({ product, handleAddToCart }) => {
   const classes = useStyles();
   const history = useHistory()
   const [loading, setLoading] = useState(true)
@@ -82,10 +86,14 @@ const DetailsPage = ({product}) => {
     setTimeout(() =>  setLoading(false) , 1500);
   },[])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleAddToCart(product.id)
+  }
+
+  if(loading) return <Loader/>
+
   return ( 
-    <>
-    {loading && <Loader/>}
-    { !loading &&
     <>
     <div className={classes.btnContainer}>
       <IconButton color = 'secondary' onClick = {() => history.goBack()}>
@@ -102,7 +110,7 @@ const DetailsPage = ({product}) => {
         />
       </div>
       <div className={classes.infoContainer}>
-        <form className={classes.formContainer} onSubmit = {e => e.preventDefault()}>
+        <form className={classes.formContainer} onSubmit = {e => handleSubmit(e)}>
           <Typography variant = 'h5' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             {product.text}
           </Typography>
@@ -146,8 +154,7 @@ const DetailsPage = ({product}) => {
       </div>
     </Container>
     </>
-    }
-    </>
+    
    );
 }
  

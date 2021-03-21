@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Nav from "./Components/Nav/Nav";
 import HomePage from "./Components/HomePage";
@@ -6,8 +5,8 @@ import ProductGrid from "./Components/ProductGrid";
 import Cart from "./Components/Cart";
 import DetailsPage from './Components/DetailsPage';
 import { useState } from 'react';
-import {productArray} from './ProductArray'
-import {makeStyles} from '@material-ui/core'
+import { productArray } from './ProductArray'
+import { makeStyles } from '@material-ui/core'
 
 
 const useStyles = makeStyles(() => ({
@@ -21,20 +20,39 @@ const useStyles = makeStyles(() => ({
     },
   }
 }))
+
 const Routes = () => {
-  // const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]);
   const [activeProduct, setActiveProduct] = useState({});
   const classes  = useStyles()
-  
+
   const handleOpenDetails = (id) => {
     const newProduct = productArray.find(product => product.id === id)
     console.log(newProduct)
     setActiveProduct(newProduct)
   }
 
+  const handleAddToCart = (id, newQty = 1) => {
+    const newProduct = productArray.find(product => product.id === id)
+    if(cart.find(cartItem => cartItem.id === id)){
+      setCart(cart => cart.map(cartItem => {
+        if(cartItem.id === id) return {...cartItem, qty: cartItem.qty + newQty}
+
+        return cartItem
+      }))
+      return
+    }
+    setCart([...cart, {...newProduct, qty: 1}])
+  }
+
+  const getCartSize = () => {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    return cart.map(cartItem => cartItem.qty).reduce(reducer,0)
+  }
+
   return (
     <BrowserRouter>
-      <Nav/>
+      <Nav getCartSize = {getCartSize} />
       {/* Padding Div, to keep content under nav */}
       <div className = {classes.paddingDiv}></div>
       <Switch>
@@ -69,10 +87,11 @@ const Routes = () => {
         <Route exact path = '/react-tantalus/details'>
           <DetailsPage 
             product = {activeProduct}
+            handleAddToCart = {handleAddToCart}
           />
         </Route>
         <Route exact path = '/react-tantalus/cart'>
-          <Cart/>
+          <Cart cart = {cart} />
         </Route>
       </Switch>
     </BrowserRouter>
