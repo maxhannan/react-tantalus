@@ -11,6 +11,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { useState, useEffect } from "react";
+import Loader from "./Loader";
 
 const useStyles = makeStyles((theme) => ({
   container:{
@@ -87,17 +88,13 @@ const DetailsPage = ({product}) => {
 
   return ( 
     <>
-    {loading && 
-    <div style = {{display: 'flex', height: '90vh', justifyContent: 'center', alignItems: 'center'}}>
-      <CircularProgress color="secondary" size = '3rem' />
-    </div>}
+    {loading && <Loader/>}
     { !loading &&
-
     <>
     <div className={classes.btnContainer}>
-    <IconButton color = 'secondary' onClick = {() => history.goBack()}>
-      <MdClose />
-    </IconButton>
+      <IconButton color = 'secondary' onClick = {() => history.goBack()}>
+        <MdClose />
+      </IconButton>
     </div>
     <Container maxWidth = 'md' className = {classes.container}>
       <div className = {classes.imgContainer}>
@@ -120,8 +117,6 @@ const DetailsPage = ({product}) => {
             fullWidth
               labelId="qtyLabel"
               id="qtySelect"
-              // value={age}
-              // onChange={handleChange}
               label="Quantity"
             >
               <MenuItem value="">
@@ -139,8 +134,6 @@ const DetailsPage = ({product}) => {
             fullWidth
               labelId="sizeLabel"
               id="sizeSelect"
-              // value={age}
-              // onChange={handleChange}
               label="Size"
             >
               <MenuItem value="">
