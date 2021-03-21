@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-tantalus/static/css/main.ecaec4a9.chunk.css",
-    "main.js": "/react-tantalus/static/js/main.e1af32d6.chunk.js",
-    "main.js.map": "/react-tantalus/static/js/main.e1af32d6.chunk.js.map",
+    "main.js": "/react-tantalus/static/js/main.5c0b2579.chunk.js",
+    "main.js.map": "/react-tantalus/static/js/main.5c0b2579.chunk.js.map",
     "runtime-main.js": "/react-tantalus/static/js/runtime-main.e1773ff7.js",
     "runtime-main.js.map": "/react-tantalus/static/js/runtime-main.e1773ff7.js.map",
     "static/js/2.4011f022.chunk.js": "/react-tantalus/static/js/2.4011f022.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.e1773ff7.js",
     "static/js/2.4011f022.chunk.js",
     "static/css/main.ecaec4a9.chunk.css",
-    "static/js/main.e1af32d6.chunk.js"
+    "static/js/main.5c0b2579.chunk.js"
   ]
 }
