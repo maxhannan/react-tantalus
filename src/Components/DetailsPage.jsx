@@ -1,8 +1,5 @@
 import { useHistory } from "react-router-dom";
-import mens8 from '../Assets/mens/mens8.jpg'
-import mens8lt from '../Assets/mens/mens8alt.jpg'
-import uniqid from 'uniqid'
-import { Button, Container, IconButton, Typography, CircularProgress } from "@material-ui/core";
+import { Button, Container, IconButton, Typography } from "@material-ui/core";
 import {MdClose} from 'react-icons/md'
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -83,7 +80,6 @@ const DetailsPage = ({product}) => {
   const [loading, setLoading] = useState(true)
   useEffect(()=>{
     setTimeout(() =>  setLoading(false) , 1500);
-
   },[])
 
   return ( 
@@ -96,56 +92,57 @@ const DetailsPage = ({product}) => {
         <MdClose />
       </IconButton>
     </div>
+
     <Container maxWidth = 'md' className = {classes.container}>
       <div className = {classes.imgContainer}>
         <img src={product.pic} 
-        onMouseOver={e => (e.currentTarget.src = product.altPic)}
+          onMouseOver={e => (e.currentTarget.src = product.altPic)}
           onMouseOut={e => (e.currentTarget.src = product.pic)}
-        alt="" className = {classes.imgStyle} />
+          alt={product.text} className = {classes.imgStyle} 
+        />
       </div>
       <div className={classes.infoContainer}>
-        <div className={classes.formContainer}>
+        <form className={classes.formContainer} onSubmit = {e => e.preventDefault()}>
           <Typography variant = 'h5' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             {product.text}
           </Typography>
           <Typography variant = 'h6' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             ${product.price}
           </Typography>
-          <FormControl variant="outlined" className={classes.formControl}>
+
+          <FormControl variant="outlined" onSubmit = {e => e.preventDefault()}
+          className={classes.formControl}>
             <InputLabel id="qtyLabel">Quantity</InputLabel>
             <Select
-            fullWidth
+              fullWidth
               labelId="qtyLabel"
               id="qtySelect"
               label="Quantity"
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
+              <MenuItem value=""><em>None</em></MenuItem>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
+
           <FormControl variant="outlined" className={classes.formControl}  style = {{marginBottom: '2vh'}} >
             <InputLabel id="sizeLabel">Size</InputLabel>
             <Select
-            style = {{fontFamily: "'Montserrat', sans-serif",}}
-            fullWidth
+              fullWidth
               labelId="sizeLabel"
               id="sizeSelect"
               label="Size"
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
+              <MenuItem value=""><em>None</em></MenuItem>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
-          <Button variant = 'outlined' color = 'secondary' style = {{fontFamily: "'Montserrat', sans-serif",}} >Add To cart</Button>
-        </div>
+
+          <Button variant = 'outlined' color = 'secondary' type = 'submit' style = {{fontFamily: "'Montserrat', sans-serif",}} >Add To cart</Button>
+        </form>
       </div>
     </Container>
     </>

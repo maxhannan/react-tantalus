@@ -1,19 +1,20 @@
-import { Container, Grid, CircularProgress } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import {productArray} from '../ProductArray'
 import Loader from "./Loader";
 import ProductBox from "./ProductBox";
 
 const ProductGrid = ({section, handleOpenDetails}) => {
-  const [loading, setLoading] = useState(true)
   const filteredProducts = productArray.filter(product => product.sectionId.includes(section))
- 
+
   const ProductElements = () =>{
-    
+    const [loading, setLoading] = useState(true)
+
     useEffect(()=>{
       setTimeout(() =>  setLoading(false) , 1500);
 
     },[])
+
   return(
     <>
     {loading &&  <Loader />}
@@ -23,7 +24,8 @@ const ProductGrid = ({section, handleOpenDetails}) => {
       {filteredProducts.map(product => (
         <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
       ))}
-    </Grid>}
+    </Grid>
+    }
     </>
   );
   }

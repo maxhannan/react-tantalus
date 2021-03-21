@@ -1,4 +1,4 @@
-import {  Typography, Grid, Paper, makeStyles, IconButton, Button } from "@material-ui/core";
+import {  Typography, Grid, Paper, makeStyles } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +47,7 @@ const ProductBox = ({product, handleOpenDetails}) => {
           <Typography variant = 'body2' color = 'textPrimary' style = {{fontFamily: "'Montserrat', sans-serif",}} gutterBottom>
             {product.text}
           </Typography>
-          <Typography variant = 'body2' color = 'textSecondary'  style = {{fontFamily: "'Montserrat', sans-serif"}}gutterBottom>
+          <Typography variant = 'body2' color = 'textSecondary'  style = {{fontFamily: "'Montserrat', sans-serif"}} gutterBottom>
             ${product.price}
           </Typography>
         </div>

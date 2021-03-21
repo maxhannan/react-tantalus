@@ -25,11 +25,13 @@ const Routes = () => {
   // const [cart, setCart] = useState([]);
   const [activeProduct, setActiveProduct] = useState({});
   const classes  = useStyles()
+  
   const handleOpenDetails = (id) => {
     const newProduct = productArray.find(product => product.id === id)
     console.log(newProduct)
     setActiveProduct(newProduct)
   }
+
   return (
     <BrowserRouter>
       <Nav/>
