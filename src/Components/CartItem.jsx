@@ -39,13 +39,14 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const CartItem = ({product}) => {
+const CartItem = ({product, handleCartDelete}) => {
   const classes = useStyles()
+  const id = product.id
   return ( 
     <Grid item  xs = {6} sm = {4} md = {3} lg = {2}>
     
     <img src={product.pic} alt="" style = {{maxWidth: '100%', maxHeight: '100%'}}/>
-    <div style = {{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+    <div  id = {product.id} style = {{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
     <FormControl variant="outlined" size = 'small' onSubmit = {e => e.preventDefault()}
           className={classes.formControl} fullWidth >
             <InputLabel id="qtyLabel">Quantity</InputLabel>
@@ -63,9 +64,9 @@ const CartItem = ({product}) => {
               <MenuItem value={6}>6</MenuItem>
             </Select>
           </FormControl>
-    <IconButton color = 'secondary' >
+        <IconButton color = 'secondary' onClick = {(e) => handleCartDelete(id)} >
           <TiTrash/>
-        </IconButton>
+        </IconButton> 
     </div>
      
       

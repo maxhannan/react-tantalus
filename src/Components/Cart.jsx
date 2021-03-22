@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Cart = ({cart, getCartTotal, getCartSize}) => {
+const Cart = ({cart, getCartTotal, getCartSize, handleCartDelete}) => {
   const classes = useStyles()
   return ( 
 
@@ -23,7 +23,7 @@ const Cart = ({cart, getCartTotal, getCartSize}) => {
     </Typography>
     <Grid container spacing={2} style = {{animation: 'fadeIn 500ms ease-in-out', marginBottom: '100px'}}>
       {cart.map(cartItem => (
-        <CartItem product = {cartItem} />
+        <CartItem handleCartDelete = {handleCartDelete} key = {cartItem.id} product = {cartItem} />
       ))}
       {/* <h1>Total: ${getCartTotal()}</h1> */}
     </Grid>
@@ -35,12 +35,12 @@ const Cart = ({cart, getCartTotal, getCartSize}) => {
       }} 
       className={classes.root}
     >
-      <Fab variant="extended" color = 'secondary' size = 'large'>
+     { getCartSize() > 0 && <Fab variant="extended" color = 'secondary' size = 'large'>
         <Typography style = {{fontFamily: "'Montserrat', sans-serif", fontWeight: '500'}}>
           ${getCartTotal()}
         </Typography>
         <MdShoppingCart className={classes.extendedIcon} />
-      </Fab>
+      </Fab>}
     </div>
     </Container>
    );

@@ -43,6 +43,7 @@ const Routes = () => {
     }
     setCart([...cart, {...newProduct, qty: 1}])
   }
+
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
   const getCartSize = () => ( 
@@ -52,6 +53,10 @@ const Routes = () => {
   const getCartTotal = () => (
     cart.map(cartItem => (cartItem.price * cartItem.qty)).reduce(reducer,0).toFixed(2)
   )
+
+  const handleCartDelete = (id) => {
+    setCart(cart.filter(cartItem => cartItem.id !== id))
+  }
 
   return (
     <BrowserRouter>
@@ -78,14 +83,12 @@ const Routes = () => {
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
           heading = "Women's Clothing"
-
           section = 'women'/>
         </Route>
         <Route exact path = '/react-tantalus/home'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
           heading = "Home Goods"
-
           section = 'home'/>
         </Route>
         <Route exact path = '/react-tantalus/lifestyle'>
@@ -111,6 +114,7 @@ const Routes = () => {
             cart = {cart} 
             getCartTotal = {getCartTotal}
             getCartSize = {getCartSize}
+            handleCartDelete ={handleCartDelete}
           />
         </Route>
       </Switch>
