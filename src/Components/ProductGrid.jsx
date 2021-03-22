@@ -1,8 +1,9 @@
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import {productArray} from '../ProductArray'
+import {productArray } from '../ProductArray'
 import Loader from "./Loader";
 import ProductBox from "./ProductBox";
+import { Type } from "./StyledComponents";
 
 const ProductGrid = ({section, handleOpenDetails, heading}) => {
   const filteredProducts = productArray
@@ -19,14 +20,21 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
 
     return(
       <>
-      <Typography variant = 'h4'  style = {{ animation: 'fadeIn 500ms ease-in-out',fontFamily: "'Montserrat', sans-serif", fontWeight: '400', marginTop: '1rem', marginBottom: '.5rem'}} >
-        {heading}
-      </Typography>
-      <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out'}}>
-        {filteredProducts.map(product => (
-          <ProductBox key = {product.id} handleOpenDetails = {handleOpenDetails} product = {product}/>
-        ))}
-      </Grid>
+        <Type 
+          variant = 'h4'  
+          style = {{ animation: 'fadeIn 500ms ease-in-out', marginTop: '1rem', marginBottom: '.5rem'}} 
+        >
+          {heading}
+        </Type>
+        <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out'}}>
+          { filteredProducts.map(product => (
+            <ProductBox 
+              key = {product.id} 
+              handleOpenDetails = {handleOpenDetails} 
+              product = {product}
+            />
+          ))}
+        </Grid>
       </>
     );
   }

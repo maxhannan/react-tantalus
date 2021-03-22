@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { MdClose } from 'react-icons/md'
+import { IoReturnUpBackOutline } from 'react-icons/io5'
 import { useStyles } from './styles';
 import { 
   Button, 
@@ -13,30 +13,35 @@ import {
   Select
 } from "@material-ui/core";
 import Loader from "../Loader";
+import { Type } from "../StyledComponents";
 
-const DetailsPage = ({ product, handleAddToCart }) => {
+const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
   const classes = useStyles();
   const history = useHistory()
   const [loading, setLoading] = useState(true)
   const [qty, setQty] = useState(1)
-  
+  const avail = [...Array(product.available + 1).keys()].slice(1, product.available + 1)
+
   useEffect(()=>{
     setTimeout(() =>  setLoading(false) , 500);
   },[])
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(getCartItemById(product.id).qty >= product.available){
+      return
+    }
+
     handleAddToCart(product.id, qty)
     setQty(1)
   }
-
   if(loading) return <Loader/>
 
   return ( 
     <>
     <div className={classes.btnContainer}>
       <IconButton color = 'secondary' onClick = {() => history.goBack()}>
-        <MdClose />
+        <IoReturnUpBackOutline />
       </IconButton>
     </div>
     <Container maxWidth = 'md' className = {classes.container}>
@@ -50,12 +55,16 @@ const DetailsPage = ({ product, handleAddToCart }) => {
       <div className={classes.infoContainer}>
       
         <form className={classes.formContainer} onSubmit = {e => handleSubmit(e)}>
-        <Typography variant = 'h5' style = {{fontFamily: "'Montserrat', sans-serif", margin: '4px 4px'}} gutterBottom>
+        <Type variant = 'overline' style = {{ margin: '0px 4px'}} color = 'secondary'>
+            {getCartItemById(product.id).inCart && <>{getCartItemById(product.id).qty } in cart</> }
+          </Type>
+          <Type variant = 'h5' style = {{ margin: '0px 4px'}} gutterBottom>
             {product.text}
-          </Typography>
-          <Typography variant = 'h6' style = {{fontFamily: "'Montserrat', sans-serif", margin: '4px 4px'}} gutterBottom>
+          </Type>
+          <Type variant = 'h6' style = {{ margin: '4px 4px'}} gutterBottom>
             ${product.price}
-          </Typography>
+          </Type>
+         
           <div style = {{display:'flex', justifyContent: 'space-between'}}>
           <FormControl 
             variant="outlined" 
@@ -71,12 +80,11 @@ const DetailsPage = ({ product, handleAddToCart }) => {
               value = {qty}
               onChange = {e => setQty(e.target.value)}
             >
-              <MenuItem value={1}>1</MenuItem>
-              <MenuItem value={2}>2</MenuItem>
-              <MenuItem value={3}>3</MenuItem>
-              <MenuItem value={4}>4</MenuItem>
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={6}>6</MenuItem>
+              {avail.map(option => {
+                console.log(option)
+                return <MenuItem value={option}>{option}</MenuItem>
+              })}
+  
             </Select>
           </FormControl>
 
@@ -95,11 +103,11 @@ const DetailsPage = ({ product, handleAddToCart }) => {
           </FormControl>
           </div>
           <Button variant = 'outlined' color = 'secondary' type = 'submit' style = {{fontFamily: "'Montserrat', sans-serif", margin: '4px',}} >Add To cart</Button>
+
         </form>
       </div>
     </Container>
     </>
-    
    );
 }
  

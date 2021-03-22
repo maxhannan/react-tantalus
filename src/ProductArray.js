@@ -25,7 +25,8 @@ export const productArray = [
     price: 12.00,
     pic: mens8,
     altPic: mens8lt,
-    sectionId: ['men']
+    sectionId: ['men'],
+    available: 9
   },
   {
     id: uniqid(),
@@ -33,7 +34,8 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['men', 'sale', 'new']
+    sectionId: ['men', 'sale', 'new'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -41,7 +43,8 @@ export const productArray = [
     price: 44.99,
     pic: mens6,
     altPic: mens6alt,
-    sectionId: ['men', 'sale']
+    sectionId: ['men', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -49,7 +52,8 @@ export const productArray = [
     price: 59.99,
     pic: mens5,
     altPic: mens5alt,
-    sectionId: ['men', 'new']
+    sectionId: ['men', 'new'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -57,7 +61,8 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['men', 'sale']
+    sectionId: ['men', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -65,7 +70,8 @@ export const productArray = [
     price: 10.99,
     pic: mens3,
     altPic: mens3alt,
-    sectionId: ['men']
+    sectionId: ['men'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -73,7 +79,8 @@ export const productArray = [
     price: 84.99,
     pic: mens2,
     altPic: mens2alt,
-    sectionId: ['men']
+    sectionId: ['men'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -81,7 +88,8 @@ export const productArray = [
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
-    sectionId: ['men', 'sale']
+    sectionId: ['men', 'sale'],
+    available: 6
   },
   // Womens Products
   {
@@ -90,7 +98,8 @@ export const productArray = [
     price: 12.00,
     pic: mens8,
     altPic: mens8lt,
-    sectionId: ['women']
+    sectionId: ['women'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -98,7 +107,8 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['women', 'sale']
+    sectionId: ['women', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -106,7 +116,8 @@ export const productArray = [
     price: 44.99,
     pic: mens6,
     altPic: mens6alt,
-    sectionId: ['women', 'sale']
+    sectionId: ['women', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -114,7 +125,8 @@ export const productArray = [
     price: 59.99,
     pic: mens5,
     altPic: mens5alt,
-    sectionId: ['women']
+    sectionId: ['women'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -122,7 +134,8 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['women', 'sale']
+    sectionId: ['women', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -130,7 +143,8 @@ export const productArray = [
     price: 10.99,
     pic: mens3,
     altPic: mens3alt,
-    sectionId: ['women']
+    sectionId: ['women'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -138,7 +152,8 @@ export const productArray = [
     price: 84.99,
     pic: mens2,
     altPic: mens2alt,
-    sectionId: ['women']
+    sectionId: ['women'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -146,7 +161,8 @@ export const productArray = [
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
-    sectionId: ['women', 'sale']
+    sectionId: ['women', 'sale'],
+    available: 6
   },
   //home
   {
@@ -155,7 +171,8 @@ export const productArray = [
     price: 12.00,
     pic: mens8,
     altPic: mens8lt,
-    sectionId: ['home']
+    sectionId: ['home'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -163,7 +180,8 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['home', 'sale']
+    sectionId: ['home', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -171,7 +189,8 @@ export const productArray = [
     price: 44.99,
     pic: mens6,
     altPic: mens6alt,
-    sectionId: ['home', 'sale']
+    sectionId: ['home', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -179,7 +198,8 @@ export const productArray = [
     price: 59.99,
     pic: mens5,
     altPic: mens5alt,
-    sectionId: ['home']
+    sectionId: ['home'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -187,7 +207,8 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['home', 'sale', 'new']
+    sectionId: ['home', 'sale', 'new'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -195,7 +216,8 @@ export const productArray = [
     price: 10.99,
     pic: mens3,
     altPic: mens3alt,
-    sectionId: ['home']
+    sectionId: ['home'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -203,7 +225,8 @@ export const productArray = [
     price: 84.99,
     pic: mens2,
     altPic: mens2alt,
-    sectionId: ['home']
+    sectionId: ['home'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -211,7 +234,8 @@ export const productArray = [
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
-    sectionId: ['home', 'sale', 'new']
+    sectionId: ['home', 'sale', 'new'],
+    available: 6
   },
   //lifestyle
   {
@@ -220,7 +244,8 @@ export const productArray = [
     price: 12.00,
     pic: mens8,
     altPic: mens8lt,
-    sectionId: ['lifestyle']
+    sectionId: ['lifestyle'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -228,7 +253,8 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['lifestyle', 'sale']
+    sectionId: ['lifestyle', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -236,7 +262,8 @@ export const productArray = [
     price: 44.99,
     pic: mens6,
     altPic: mens6alt,
-    sectionId: ['lifestyle', 'sale']
+    sectionId: ['lifestyle', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -244,7 +271,8 @@ export const productArray = [
     price: 59.99,
     pic: mens5,
     altPic: mens5alt,
-    sectionId: ['lifestyle']
+    sectionId: ['lifestyle'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -252,7 +280,8 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['lifestyle', 'sale']
+    sectionId: ['lifestyle', 'sale'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -260,7 +289,8 @@ export const productArray = [
     price: 10.99,
     pic: mens3,
     altPic: mens3alt,
-    sectionId: ['lifestyle']
+    sectionId: ['lifestyle'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -268,7 +298,8 @@ export const productArray = [
     price: 84.99,
     pic: mens2,
     altPic: mens2alt,
-    sectionId: ['lifestyle']
+    sectionId: ['lifestyle'],
+    available: 6
   },
   {
     id: uniqid(),
@@ -276,7 +307,8 @@ export const productArray = [
     price: 89.99,
     pic: mens1,
     altPic: mens1alt,
-    sectionId: ['lifestyle', 'sale']
+    sectionId: ['lifestyle', 'sale'],
+    available: 6
   },
 
 

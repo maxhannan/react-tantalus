@@ -14,6 +14,7 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
     "@media (max-width: 1000px)":{
       width: '100%',
       height: '100%'
@@ -32,11 +33,16 @@ export const useStyles = makeStyles((theme) => ({
     } 
   },
   btnContainer:{
-    width: '95%', 
+    marginTop: '10px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '70%', 
     display: 'flex', 
     justifyContent: 'flex-end',
     "@media (max-width: 1000px)":{
       width: '98%',
+      marginTop: '0px',
+      justifyContent: 'flex-start',
     } 
   },
   formContainer:{

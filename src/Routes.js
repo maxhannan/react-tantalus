@@ -25,47 +25,56 @@ const Routes = () => {
   const [activeProduct, setActiveProduct] = useState({});
   const classes  = useStyles()
 
-  const getProductById = (id) => productArray.find(product => product.id === id)
+  const getProductById = (id) => (
+    productArray.find(product => product.id === id)
+  );
+
+  const getCartItemById = (id) => {
+    if(cart.find(product => product.id === id)){
+      return {inCart: true, qty: cart.find(product => product.id === id).qty }
+    }
+    return {inCart: false, qty:0}
+  }
+    
+  
 
   const handleOpenDetails = (id) => {
     setActiveProduct(getProductById(id));
-  }
+  };
 
   const handleAddToCart = (id, newQty) => {
-    const newProduct = getProductById(id)
-
     if(cart.find(cartItem => cartItem.id === id)){
       setCart(cart => cart.map(cartItem => {
         if(cartItem.id === id) return {...cartItem, qty: cartItem.qty + newQty}
         return cartItem
-      }))
+      }));
       return
-    }
-    setCart([...cart, {...newProduct, qty: newQty}])
-  }
+    };
+    setCart([...cart, {...getProductById(id), qty: newQty}])
+  };
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
   const getCartSize = () => ( 
     cart.map(cartItem => cartItem.qty).reduce(reducer,0)
-  )
+  );
 
   const getCartTotal = () => (
     cart.map(cartItem => (cartItem.price * cartItem.qty)).reduce(reducer,0).toFixed(2)
-  )
+  );
 
   const handleCartDelete = (id) => {
     setCart(cart.filter(cartItem => cartItem.id !== id))
-  }
+  };
 
   const handleCartUpdate = (id, newQty) => {
     setCart(cart.map(cartItem => {
       if(cartItem.id === id){
         return {...cartItem, qty: newQty}
-      }
+      };
       return cartItem
-    }))
-  }
+    }));
+  };
 
   return (
     <BrowserRouter>
@@ -116,6 +125,7 @@ const Routes = () => {
           <DetailsPage 
             product = {activeProduct}
             handleAddToCart = {handleAddToCart}
+            getCartItemById = {getCartItemById}
           />
         </Route>
         <Route exact path = '/react-tantalus/cart'>
