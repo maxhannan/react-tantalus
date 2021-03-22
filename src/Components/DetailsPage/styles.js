@@ -52,6 +52,7 @@ export const useStyles = makeStyles((theme) => ({
   formControl: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
+    margin: '4px',
     minWidth: 120,
     fontFamily: "'Montserrat', sans-serif",
 

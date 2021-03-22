@@ -12,6 +12,7 @@ import {
   Grid,
   Paper
 } from "@material-ui/core";
+import { useState } from "react";
 import {TiTrash} from 'react-icons/ti'
 
 const useStyles = makeStyles((theme) => ({
@@ -39,9 +40,15 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const CartItem = ({product, handleCartDelete}) => {
+const CartItem = ({product, handleCartDelete, handleCartUpdate}) => {
   const classes = useStyles()
   const id = product.id
+  const [qty, setQty] = useState(product.qty)
+
+  const handleChange = (newVal) => {
+    setQty(newVal)
+    handleCartUpdate(id, newVal)
+  }
   return ( 
     <Grid item  xs = {6} sm = {4} md = {3} lg = {2}>
     
@@ -51,7 +58,8 @@ const CartItem = ({product, handleCartDelete}) => {
           className={classes.formControl} fullWidth >
             <InputLabel id="qtyLabel">Quantity</InputLabel>
             <Select
-              value = {product.qty}
+              value = {qty}
+              onChange = {(e) => handleChange(e.target.value) }
               labelId="qtyLabel"
               id="qtySelect"
               label="Quantity"
@@ -62,6 +70,12 @@ const CartItem = ({product, handleCartDelete}) => {
               <MenuItem value={4}>4</MenuItem>
               <MenuItem value={5}>5</MenuItem>
               <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
+              <MenuItem value={8}>8</MenuItem>
+              <MenuItem value={9}>9</MenuItem>
+              <MenuItem value={10}>10</MenuItem>
+              <MenuItem value={11}>11</MenuItem>
+              <MenuItem value={12}>12</MenuItem>
             </Select>
           </FormControl>
         <IconButton color = 'secondary' onClick = {(e) => handleCartDelete(id)} >

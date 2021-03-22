@@ -31,7 +31,7 @@ const Routes = () => {
     setActiveProduct(getProductById(id));
   }
 
-  const handleAddToCart = (id, newQty = 1) => {
+  const handleAddToCart = (id, newQty) => {
     const newProduct = getProductById(id)
 
     if(cart.find(cartItem => cartItem.id === id)){
@@ -41,7 +41,7 @@ const Routes = () => {
       }))
       return
     }
-    setCart([...cart, {...newProduct, qty: 1}])
+    setCart([...cart, {...newProduct, qty: newQty}])
   }
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -56,6 +56,15 @@ const Routes = () => {
 
   const handleCartDelete = (id) => {
     setCart(cart.filter(cartItem => cartItem.id !== id))
+  }
+
+  const handleCartUpdate = (id, newQty) => {
+    setCart(cart.map(cartItem => {
+      if(cartItem.id === id){
+        return {...cartItem, qty: newQty}
+      }
+      return cartItem
+    }))
   }
 
   return (
@@ -115,6 +124,7 @@ const Routes = () => {
             getCartTotal = {getCartTotal}
             getCartSize = {getCartSize}
             handleCartDelete ={handleCartDelete}
+            handleCartUpdate = {handleCartUpdate}
           />
         </Route>
       </Switch>
