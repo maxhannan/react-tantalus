@@ -20,7 +20,8 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
   const history = useHistory()
   const [loading, setLoading] = useState(true)
   const [qty, setQty] = useState(1)
-  const avail = [...Array(product.available + 1).keys()].slice(1, product.available + 1)
+
+  const avail = Array.from({length: product.available}, (v, k) => k+1); 
 
   useEffect(()=>{
     setTimeout(() =>  setLoading(false) , 500);
@@ -55,8 +56,8 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
       <div className={classes.infoContainer}>
       
         <form className={classes.formContainer} onSubmit = {e => handleSubmit(e)}>
-        <Type variant = 'overline' style = {{ margin: '0px 4px'}} color = 'secondary'>
-            {getCartItemById(product.id).inCart && <>{getCartItemById(product.id).qty } in cart</> }
+          <Type variant = 'overline' style = {{ margin: '0px 4px'}} color = 'secondary'>
+            {getCartItemById(product.id).inCart && <>{getCartItemById(product.id).qty } in cart</>}
           </Type>
           <Type variant = 'h5' style = {{ margin: '0px 4px'}} gutterBottom>
             {product.text}

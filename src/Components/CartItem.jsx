@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 const CartItem = ({product, handleCartDelete, handleCartUpdate}) => {
   const classes = useStyles()
   const id = product.id
-  const avail = [...Array(product.available + 1).keys()].slice(1, product.available + 1)
+  const avail = Array.from({length: product.available}, (v, k) => k+1); 
   
 
   const handleChange = (newVal) => {
