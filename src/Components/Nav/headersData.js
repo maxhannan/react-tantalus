@@ -13,7 +13,7 @@ export const headersData = [
     href: "/react-tantalus/women",
   },
   {
-    label: "Home Goods",
+    label: "Furniture",
     href: "/react-tantalus/home",
   },
   {

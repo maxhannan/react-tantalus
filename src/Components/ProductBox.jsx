@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imgStyle: {
     maxWidth: '100%', 
-    maxHeight: '100%'
+    maxHeight: '100%', 
   },
   typeContainer: {
     display: 'flex', 
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const ProductBox = ({product, handleOpenDetails}) => {
   const classes = useStyles()
   return ( 
-    <Grid item  xs = {6} sm = {6} md = {4} lg = {3}>
+    <Grid item  xs = {6} sm = {4} md = {4} lg = {3}>
       <Paper elevation = {0} className={classes.paper}>
         <div >
         <RouterLink to = '/react-tantalus/details'>

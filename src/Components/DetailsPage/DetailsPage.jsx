@@ -20,9 +20,9 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
   const history = useHistory()
   const [loading, setLoading] = useState(true)
   const [qty, setQty] = useState(1)
-
+  const [size, setSize] = useState(product.sizes[0])
   const avail = Array.from({length: product.available}, (v, k) => k+1); 
-
+  
   useEffect(()=>{
     setTimeout(() =>  setLoading(false) , 500);
   },[])
@@ -33,7 +33,7 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
       return
     }
 
-    handleAddToCart(product.id, qty)
+    handleAddToCart(product.id, qty, size)
     setQty(1)
   }
   if(loading) return <Loader/>
@@ -48,8 +48,8 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
     <Container maxWidth = 'md' className = {classes.container}>
       <div className = {classes.imgContainer}>
         <img src={product.pic} 
-          onMouseOver={e => (e.currentTarget.src = product.altPic)}
-          onMouseOut={e => (e.currentTarget.src = product.pic)}
+          onMouseOver={e => e.currentTarget.src = product.altPic}
+          onMouseOut={e => e.currentTarget.src = product.pic}
           alt={product.text} className = {classes.imgStyle} 
         />
       </div>
@@ -57,7 +57,11 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
       
         <form className={classes.formContainer} onSubmit = {e => handleSubmit(e)}>
           <Type variant = 'overline' style = {{ margin: '0px 4px'}} color = 'secondary'>
-            {getCartItemById(product.id).inCart && <>{getCartItemById(product.id).qty } in cart</>}
+            { getCartItemById(product.id).inCart && 
+              <> 
+                {getCartItemById(product.id).qty} in cart
+              </>
+            }
           </Type>
           <Type variant = 'h5' style = {{ margin: '0px 4px'}} gutterBottom>
             {product.text}
@@ -95,11 +99,12 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
               labelId="sizeLabel"
               id="sizeSelect"
               label="Size"
+              value = {size}
+              onChange = {e => setSize(e.target.value)}
             >
-              <MenuItem value=""><em>None</em></MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+            {product.sizes.map(size => (
+              <MenuItem value={size}>{size}</MenuItem>
+            ))}
             </Select>
           </FormControl>
           </div>

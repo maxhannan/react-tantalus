@@ -42,15 +42,15 @@ const Routes = () => {
     setActiveProduct(getProductById(id));
   };
 
-  const handleAddToCart = (id, newQty) => {
+  const handleAddToCart = (id, newQty, size) => {
     if(cart.find(cartItem => cartItem.id === id)){
       setCart(cart => cart.map(cartItem => {
-        if(cartItem.id === id) return {...cartItem, qty: cartItem.qty + newQty}
+        if(cartItem.id === id) return {...cartItem, size: size, qty: cartItem.qty + newQty}
         return cartItem
       }));
       return
     };
-    setCart([...cart, {...getProductById(id), qty: newQty}])
+    setCart([...cart, {...getProductById(id), size: size, qty: newQty}])
   };
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -106,7 +106,7 @@ const Routes = () => {
         <Route exact path = '/react-tantalus/home'>
           <ProductGrid 
           handleOpenDetails = {handleOpenDetails}
-          heading = "Home Goods"
+          heading = "Furniture"
           section = 'home'/>
         </Route>
         <Route exact path = '/react-tantalus/lifestyle'>

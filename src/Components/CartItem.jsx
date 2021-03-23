@@ -83,6 +83,7 @@ const CartItem = ({product, handleCartDelete, handleCartUpdate}) => {
         </IconButton> 
       </div>
       <div className = {classes.textContainer}>
+        <Type variant = 'body2' color = 'secondary' gutterBottom>Size: {product.size}</Type>
         <Type variant = 'subtitle1' gutterBottom>{product.text}</Type>
         <Type variant = 'subtitle1' gutterBottom>${product.price}</Type>
       </div>
