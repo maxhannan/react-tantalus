@@ -52,8 +52,8 @@ const HomePage = () => {
   <Container className = {classes.container}>
   <Grid container spacing={4} >
     <HeroBox src = {menHero} href = '/react-tantalus/men' btnText = "Shop Men's"/>
-    <HeroBox src = {womenHero} href = '/react-tantalus/men' btnText = "Shop Women's"/>
-    <HeroBox src = {furnitureHero} href = '/react-tantalus/men' btnText = "Shop Furniture"/>
+    <HeroBox src = {womenHero} href = '/react-tantalus/women' btnText = "Shop Women's"/>
+    <HeroBox src = {furnitureHero} href = '/react-tantalus/home' btnText = "Shop Furniture"/>
   </Grid>
 </Container>
   );
