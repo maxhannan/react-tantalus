@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-tantalus/static/css/main.ecaec4a9.chunk.css",
-    "main.js": "/react-tantalus/static/js/main.de642f63.chunk.js",
-    "main.js.map": "/react-tantalus/static/js/main.de642f63.chunk.js.map",
+    "main.js": "/react-tantalus/static/js/main.d7707434.chunk.js",
+    "main.js.map": "/react-tantalus/static/js/main.d7707434.chunk.js.map",
     "runtime-main.js": "/react-tantalus/static/js/runtime-main.e1773ff7.js",
     "runtime-main.js.map": "/react-tantalus/static/js/runtime-main.e1773ff7.js.map",
-    "static/js/2.f9720d4c.chunk.js": "/react-tantalus/static/js/2.f9720d4c.chunk.js",
-    "static/js/2.f9720d4c.chunk.js.map": "/react-tantalus/static/js/2.f9720d4c.chunk.js.map",
+    "static/js/2.2e1102f1.chunk.js": "/react-tantalus/static/js/2.2e1102f1.chunk.js",
+    "static/js/2.2e1102f1.chunk.js.map": "/react-tantalus/static/js/2.2e1102f1.chunk.js.map",
     "index.html": "/react-tantalus/index.html",
     "static/css/main.ecaec4a9.chunk.css.map": "/react-tantalus/static/css/main.ecaec4a9.chunk.css.map",
-    "static/js/2.f9720d4c.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.f9720d4c.chunk.js.LICENSE.txt",
+    "static/js/2.2e1102f1.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.2e1102f1.chunk.js.LICENSE.txt",
     "static/media/furn1.e29e628c.jpg": "/react-tantalus/static/media/furn1.e29e628c.jpg",
     "static/media/furn1alt.e99624ae.jpg": "/react-tantalus/static/media/furn1alt.e99624ae.jpg",
     "static/media/furn2.4a715fb0.jpg": "/react-tantalus/static/media/furn2.4a715fb0.jpg",
@@ -26,6 +26,8 @@
     "static/media/furn7alt.5c209a37.jpg": "/react-tantalus/static/media/furn7alt.5c209a37.jpg",
     "static/media/furn8.d52b2f8e.jpg": "/react-tantalus/static/media/furn8.d52b2f8e.jpg",
     "static/media/furn8alt.74a81be6.jpg": "/react-tantalus/static/media/furn8alt.74a81be6.jpg",
+    "static/media/furnitureHero.3b48d61c.jpg": "/react-tantalus/static/media/furnitureHero.3b48d61c.jpg",
+    "static/media/menHero.ad0e4aa1.jpg": "/react-tantalus/static/media/menHero.ad0e4aa1.jpg",
     "static/media/mens1.a890970d.jpg": "/react-tantalus/static/media/mens1.a890970d.jpg",
     "static/media/mens1alt.50f4446e.jpg": "/react-tantalus/static/media/mens1alt.50f4446e.jpg",
     "static/media/mens2.1c07175d.jpg": "/react-tantalus/static/media/mens2.1c07175d.jpg",
@@ -57,12 +59,13 @@
     "static/media/women7.ca358274.jpg": "/react-tantalus/static/media/women7.ca358274.jpg",
     "static/media/women7alt.ca3f4b6f.jpg": "/react-tantalus/static/media/women7alt.ca3f4b6f.jpg",
     "static/media/women8.89068d27.jpg": "/react-tantalus/static/media/women8.89068d27.jpg",
-    "static/media/women8alt.4c917514.jpg": "/react-tantalus/static/media/women8alt.4c917514.jpg"
+    "static/media/women8alt.4c917514.jpg": "/react-tantalus/static/media/women8alt.4c917514.jpg",
+    "static/media/womenHero.2efde864.jpg": "/react-tantalus/static/media/womenHero.2efde864.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e1773ff7.js",
-    "static/js/2.f9720d4c.chunk.js",
+    "static/js/2.2e1102f1.chunk.js",
     "static/css/main.ecaec4a9.chunk.css",
-    "static/js/main.de642f63.chunk.js"
+    "static/js/main.d7707434.chunk.js"
   ]
 }
