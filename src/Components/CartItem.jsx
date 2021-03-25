@@ -65,7 +65,7 @@ const CartItem = ({product, handleCartDelete, handleCartUpdate}) => {
           size = 'small' 
           className={classes.formControl}  
         >
-          <InputLabel>Quantity</InputLabel>
+          <InputLabel><Type>Quantity</Type></InputLabel>
           <Select
             value = { product.qty }
             onChange = { e => handleChange(e.target.value) }
@@ -74,7 +74,7 @@ const CartItem = ({product, handleCartDelete, handleCartUpdate}) => {
           >
             {avail.map(option => {
               console.log(option)
-              return <MenuItem value={option}>{option}</MenuItem>
+              return <MenuItem value={option}><Type>{option}</Type></MenuItem>
             })}
           </Select>
         </FormControl>

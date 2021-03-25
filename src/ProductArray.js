@@ -67,7 +67,7 @@ export const productArray = [
     price: 99.99,
     pic: mens7,
     altPic: mens7alt,
-    sectionId: ['men', 'sale', 'new'],
+    sectionId: ['men',  'new'],
     sizes: ['Small', 'Medium', 'Large', 'XL', 'XXL'],
     available: 6
   },
@@ -77,7 +77,7 @@ export const productArray = [
     price: 44.99,
     pic: mens6,
     altPic: mens6alt,
-    sectionId: ['men', 'sale'],
+    sectionId: ['men', ],
     sizes: ['8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12',],
     available: 6
   },
@@ -97,7 +97,7 @@ export const productArray = [
     price: 54.99,
     pic: mens4,
     altPic: mens4alt,
-    sectionId: ['men', 'sale'],
+    sectionId: ['men',],
     sizes: ['8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12',],
     available: 6
   },
@@ -158,7 +158,7 @@ export const productArray = [
     price: 80.00,
     pic: womens3,
     altPic: womens3alt,
-    sectionId: ['women', 'sale', 'new'],
+    sectionId: ['women', 'new'],
     sizes: ['8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12'],
     available: 6
   },
@@ -209,7 +209,7 @@ export const productArray = [
     price: 69.99,
     pic: womens8,
     altPic: womens8alt,
-    sectionId: ['women', 'sale'],
+    sectionId: ['women',],
     sizes: ['Small', 'Medium', 'Large', 'XL', 'XXL'],
     available: 6
   },
@@ -240,7 +240,7 @@ export const productArray = [
     price: 1599.99,
     pic: furn3,
     altPic: furn3alt,
-    sectionId: ['home', 'sale'],
+    sectionId: ['home'],
     sizes: ['One Size'],
     available: 6
   },
@@ -260,7 +260,7 @@ export const productArray = [
     price: 599.99,
     pic: furn5,
     altPic: furn5alt,
-    sectionId: ['home', 'sale', 'new'],
+    sectionId: ['home', 'new'],
     sizes: ['One Size'],
     available: 6
   },
@@ -290,91 +290,91 @@ export const productArray = [
     price: 369.99,
     pic: furn8,
     altPic: furn8alt,
-    sectionId: ['home', 'sale', 'new'],
+    sectionId: ['home', 'new'],
     sizes: ['One Size'],
     available: 6
   },
   //lifestyle
-  {
-    id: uniqid(),
-    text: 'Washed Corduroy Bucket Hat',
-    price: 12.00,
-    pic: mens8,
-    altPic: mens8lt,
-    sectionId: ['lifestyle', 'new'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Rolla’s Relaxo Straight Leg Jean – Stone Wash',
-    price: 99.99,
-    pic: mens7,
-    altPic: mens7alt,
-    sectionId: ['lifestyle', 'sale'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Birkenstock Arizona EVA Sandal',
-    price: 44.99,
-    pic: mens6,
-    altPic: mens6alt,
-    sectionId: ['lifestyle', 'sale'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Wide Wale Corduroy Beach Pant',
-    price: 59.99,
-    pic: mens5,
-    altPic: mens5alt,
-    sectionId: ['lifestyle'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Converse Chuck 70 Core High Top Sneaker',
-    price: 54.99,
-    pic: mens4,
-    altPic: mens4alt,
-    sectionId: ['lifestyle', 'sale'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Smile Ankle Sock',
-    price: 10.99,
-    pic: mens3,
-    altPic: mens3alt,
-    sectionId: ['lifestyle'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Vintage Sun Bleach Crew Neck Sweatshirt',
-    price: 84.99,
-    pic: mens2,
-    altPic: mens2alt,
-    sectionId: ['lifestyle'],
-    sizes: ['One Size'],
-    available: 6
-  },
-  {
-    id: uniqid(),
-    text: 'Metallica Crew Neck Sweatshirt',
-    price: 89.99,
-    pic: mens1,
-    altPic: mens1alt,
-    sectionId: ['lifestyle', 'sale'],
-    sizes: ['One Size'],
-    available: 6
-  },
+  // {
+  //   id: uniqid(),
+  //   text: 'Washed Corduroy Bucket Hat',
+  //   price: 12.00,
+  //   pic: mens8,
+  //   altPic: mens8lt,
+  //   sectionId: ['lifestyle', 'new'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Rolla’s Relaxo Straight Leg Jean – Stone Wash',
+  //   price: 99.99,
+  //   pic: mens7,
+  //   altPic: mens7alt,
+  //   sectionId: ['lifestyle', 'sale'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Birkenstock Arizona EVA Sandal',
+  //   price: 44.99,
+  //   pic: mens6,
+  //   altPic: mens6alt,
+  //   sectionId: ['lifestyle', 'sale'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Wide Wale Corduroy Beach Pant',
+  //   price: 59.99,
+  //   pic: mens5,
+  //   altPic: mens5alt,
+  //   sectionId: ['lifestyle'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Converse Chuck 70 Core High Top Sneaker',
+  //   price: 54.99,
+  //   pic: mens4,
+  //   altPic: mens4alt,
+  //   sectionId: ['lifestyle', 'sale'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Smile Ankle Sock',
+  //   price: 10.99,
+  //   pic: mens3,
+  //   altPic: mens3alt,
+  //   sectionId: ['lifestyle'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Vintage Sun Bleach Crew Neck Sweatshirt',
+  //   price: 84.99,
+  //   pic: mens2,
+  //   altPic: mens2alt,
+  //   sectionId: ['lifestyle'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
+  // {
+  //   id: uniqid(),
+  //   text: 'Metallica Crew Neck Sweatshirt',
+  //   price: 89.99,
+  //   pic: mens1,
+  //   altPic: mens1alt,
+  //   sectionId: ['lifestyle', 'sale'],
+  //   sizes: ['One Size'],
+  //   available: 6
+  // },
 
 
   

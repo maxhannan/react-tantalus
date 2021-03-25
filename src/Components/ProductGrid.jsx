@@ -21,8 +21,8 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
     return(
       <>
         <Type 
-          variant = 'h4'  
-          style = {{ animation: 'fadeIn 500ms ease-in-out', marginTop: '1rem', marginBottom: '.5rem'}} 
+          variant = 'h5'  
+          style = {{ animation: 'fadeIn 500ms ease-in-out', marginTop: '1rem', marginLeft: '.5rem', marginBottom: '.5rem'}} 
         >
           {heading}
         </Type>

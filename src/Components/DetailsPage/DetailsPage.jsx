@@ -66,7 +66,7 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
           <Type variant = 'h5' style = {{ margin: '0px 4px'}} gutterBottom>
             {product.text}
           </Type>
-          <Type variant = 'h6' style = {{ margin: '4px 4px'}} gutterBottom>
+          <Type variant = 'h6' style = {{ margin: '4px 4px'}} color = 'textSecondary' gutterBottom>
             ${product.price}
           </Type>
          
@@ -77,7 +77,7 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
             onSubmit = {e => e.preventDefault()}
             className={classes.formControl}
           >
-            <InputLabel id="qtyLabel">Quantity</InputLabel>
+            <InputLabel id="qtyLabel"><Type>Quantity</Type></InputLabel>
             <Select
               labelId="qtyLabel"
               id="qtySelect"
@@ -87,14 +87,14 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
             >
               {avail.map(option => {
                 console.log(option)
-                return <MenuItem value={option}>{option}</MenuItem>
+                return <MenuItem value={option}><Type>{option}</Type></MenuItem>
               })}
   
             </Select>
           </FormControl>
 
           <FormControl variant="outlined" fullWidth className={classes.formControl}  size = 'small' style = {{marginBottom: '2vh'}} >
-            <InputLabel id="sizeLabel">Size</InputLabel>
+            <InputLabel id="sizeLabel"><Type>Size</Type></InputLabel>
             <Select  
               labelId="sizeLabel"
               id="sizeSelect"
@@ -103,12 +103,13 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
               onChange = {e => setSize(e.target.value)}
             >
             {product.sizes.map(size => (
-              <MenuItem value={size}>{size}</MenuItem>
+              <MenuItem value={size}><Type>{size}</Type></MenuItem>
             ))}
             </Select>
           </FormControl>
           </div>
-          <Button variant = 'outlined' color = 'secondary' type = 'submit' style = {{fontFamily: "'Montserrat', sans-serif", margin: '4px',}} >Add To cart</Button>
+          <Button variant = 'outlined' color = 'secondary' type = 'submit' style = {{fontFamily: "'Montserrat', sans-serif", margin: '4px',}} >
+          <Type>Add To cart</Type></Button>
 
         </form>
       </div>
