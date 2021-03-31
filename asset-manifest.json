@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-tantalus/static/css/main.ecaec4a9.chunk.css",
-    "main.js": "/react-tantalus/static/js/main.a0bf0083.chunk.js",
-    "main.js.map": "/react-tantalus/static/js/main.a0bf0083.chunk.js.map",
+    "main.js": "/react-tantalus/static/js/main.ec8a7992.chunk.js",
+    "main.js.map": "/react-tantalus/static/js/main.ec8a7992.chunk.js.map",
     "runtime-main.js": "/react-tantalus/static/js/runtime-main.e1773ff7.js",
     "runtime-main.js.map": "/react-tantalus/static/js/runtime-main.e1773ff7.js.map",
-    "static/js/2.cd26cc82.chunk.js": "/react-tantalus/static/js/2.cd26cc82.chunk.js",
-    "static/js/2.cd26cc82.chunk.js.map": "/react-tantalus/static/js/2.cd26cc82.chunk.js.map",
+    "static/js/2.1a8e90cf.chunk.js": "/react-tantalus/static/js/2.1a8e90cf.chunk.js",
+    "static/js/2.1a8e90cf.chunk.js.map": "/react-tantalus/static/js/2.1a8e90cf.chunk.js.map",
     "index.html": "/react-tantalus/index.html",
     "static/css/main.ecaec4a9.chunk.css.map": "/react-tantalus/static/css/main.ecaec4a9.chunk.css.map",
-    "static/js/2.cd26cc82.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.cd26cc82.chunk.js.LICENSE.txt",
+    "static/js/2.1a8e90cf.chunk.js.LICENSE.txt": "/react-tantalus/static/js/2.1a8e90cf.chunk.js.LICENSE.txt",
     "static/media/furn1.e29e628c.jpg": "/react-tantalus/static/media/furn1.e29e628c.jpg",
     "static/media/furn1alt.e99624ae.jpg": "/react-tantalus/static/media/furn1alt.e99624ae.jpg",
     "static/media/furn2.4a715fb0.jpg": "/react-tantalus/static/media/furn2.4a715fb0.jpg",
@@ -64,8 +64,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e1773ff7.js",
-    "static/js/2.cd26cc82.chunk.js",
+    "static/js/2.1a8e90cf.chunk.js",
     "static/css/main.ecaec4a9.chunk.css",
-    "static/js/main.a0bf0083.chunk.js"
+    "static/js/main.ec8a7992.chunk.js"
   ]
 }
