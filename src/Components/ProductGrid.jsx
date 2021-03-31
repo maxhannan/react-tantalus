@@ -16,15 +16,17 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
       productMaker()
     },[])
 
-    const productMaker = () => {
-      setProducts(filteredProducts.map(product => (
-        <ProductBox 
-        key = {product.id} 
-        handleOpenDetails = {handleOpenDetails} 
-        product = {product}
-      />
-      )))
-      setTimeout(() =>  setLoading(false) , 500);
+    const productMaker = async () => {
+      await setProducts(
+        filteredProducts.map(product => (
+          <ProductBox 
+          key = {product.id} 
+          handleOpenDetails = {handleOpenDetails} 
+          product = {product}
+        />
+        ))
+      )
+      setTimeout(() =>  setLoading(false) , 1000);
     }
 
       
@@ -41,7 +43,7 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
           {heading}
         </Type>
         <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out'}}>
-        {products}
+          {products}
         </Grid>
       </>
     );
