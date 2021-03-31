@@ -5,7 +5,7 @@ import ProductGrid from "./Components/ProductGrid";
 import Cart from "./Components/Cart";
 import DetailsPage from './Components/DetailsPage/DetailsPage';
 import { useState } from 'react';
-import { productArray } from './ProductArray'
+
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-const Routes = () => {
+const Routes = ({ productArray }) => {
   const [cart, setCart] = useState([]);
   const [activeProduct, setActiveProduct] = useState({});
   const classes  = useStyles()
@@ -35,8 +35,6 @@ const Routes = () => {
     }
     return {inCart: false, qty:0}
   }
-    
-  
 
   const handleOpenDetails = (id) => {
     setActiveProduct(getProductById(id));

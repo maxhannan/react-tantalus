@@ -5,8 +5,7 @@ import { useStyles } from './styles';
 import { 
   Button, 
   Container, 
-  IconButton, 
-  Typography, 
+  IconButton,
   InputLabel, 
   MenuItem, 
   FormControl, 
@@ -21,6 +20,7 @@ const DetailsPage = ({ product, handleAddToCart , getCartItemById}) => {
   const [loading, setLoading] = useState(true)
   const [qty, setQty] = useState(1)
   const [size, setSize] = useState(product.sizes[0])
+  // converts available prodcuts into iterable array ie 3 => [ 1, 2 , 3 ]
   const avail = Array.from({length: product.available}, (v, k) => k+1); 
   
   useEffect(()=>{

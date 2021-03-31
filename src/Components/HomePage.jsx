@@ -5,6 +5,7 @@ import furnitureHero from '../Assets/home/furnitureHero.jpg'
 import { Link as RouterLink } from "react-router-dom";
 import {makeStyles} from '@material-ui/core'
 import { Type } from "./StyledComponents";
+
  const useStyles = makeStyles(() => ({
   container: {
     width: '100%', 
@@ -27,21 +28,39 @@ import { Type } from "./StyledComponents";
   imgStyle: {
     maxHeight: '100%', 
     maxWidth: '100%', 
+    borderRadius: '5px',
     opacity: .5,
     transition: 'opacity 500ms ease, transform 500ms ease',
     '&:hover':{
+      opacity: 1,
       transform: 'scale(1.05)'
     }
-  }
+  },
+  btnStyle:{
+    position: 'absolute',
+    color: 'white',
+    
+    '&:hover':{
+
+    }
+  },
+
+
  }))
 const HomePage = () => {
   const classes = useStyles()
   
   const HeroBox = ({src, href, btnText}) => (
-    <Grid item  xs = {12} sm = {12} md = {4} style = {{height: '100%', }}>
+    <Grid item  xs = {12} sm = {12} md = {4} style = {{ height: '100%' }}>
       <div className = {classes.heroContainer}>
-        <img src={src} alt="hero" className = {classes.imgStyle}/>
-        <Button component = {RouterLink} to = {href} variant = 'outlined' color = 'secondary' style = {{position: 'absolute'}}>
+        <img src={src} alt="hero" className = { classes.imgStyle } />
+        <Button 
+          component = {RouterLink} 
+          to = {href} 
+          variant = 'contained' 
+          color = 'secondary' 
+          className = {classes.btnStyle}
+        >
           <Type>{btnText}</Type>
         </Button>
       </div>

@@ -103,9 +103,9 @@ const Nav = ({getCartSize}) => {
   );
 
   const CartIcon = (
-    <IconButton component = {RouterLink} to = '/react-tantalus/cart'>
+    <IconButton component = {RouterLink} to = '/react-tantalus/cart' color = 'secondary'>
       <Badge badgeContent={getCartSize()} color = 'secondary'>
-        <RiShoppingCart2Line color = '#333'/>
+        <RiShoppingCart2Line />
       </Badge>
     </IconButton>
   );

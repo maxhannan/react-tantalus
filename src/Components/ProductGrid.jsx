@@ -11,12 +11,26 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
 
   const ProductElements = () =>{
     const [loading, setLoading] = useState(true)
-
+    const [ products, setProducts ] = useState([])
     useEffect(()=>{
-      setTimeout(() =>  setLoading(false) , 500);
+      productMaker()
     },[])
 
+    const productMaker = () => {
+      setProducts(filteredProducts.map(product => (
+        <ProductBox 
+        key = {product.id} 
+        handleOpenDetails = {handleOpenDetails} 
+        product = {product}
+      />
+      )))
+      setTimeout(() =>  setLoading(false) , 500);
+    }
+
+      
+
     if(loading) return <Loader />
+
 
     return(
       <>
@@ -27,13 +41,7 @@ const ProductGrid = ({section, handleOpenDetails, heading}) => {
           {heading}
         </Type>
         <Grid container spacing={1} style = {{animation: 'fadeIn 500ms ease-in-out'}}>
-          { filteredProducts.map(product => (
-            <ProductBox 
-              key = {product.id} 
-              handleOpenDetails = {handleOpenDetails} 
-              product = {product}
-            />
-          ))}
+        {products}
         </Grid>
       </>
     );
